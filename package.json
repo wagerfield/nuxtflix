@@ -1,0 +1,36 @@
+{
+  "name": "nuxtflix",
+  "version": "0.0.0",
+  "license": "MIT",
+  "author": "Matthew Wagerfield <matthew@wagerfield.com>",
+  "homepage": "https://github.com/wagerfield/nuxtflix#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wagerfield/nuxtflix.git"
+  },
+  "bugs": {
+    "url": "https://github.com/wagerfield/nuxtflix/issues"
+  },
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "analyse": "nuxt build -a",
+    "analyze": "nuxt build -a",
+    "generate": "nuxt generate",
+    "start": "nuxt start",
+    "serve": "serve dist",
+    "format": "prettier --write '*.{js,md}' 'src/**/*.{js,json,scss,vue}'",
+    "precommit": "yarn format"
+  },
+  "dependencies": {
+    "@nuxtjs/pwa": "^2.6.0",
+    "case": "^1.6.0",
+    "nuxt": "^2.3.4"
+  },
+  "devDependencies": {
+    "node-sass": "^4.10.0",
+    "prettier": "^1.15.3",
+    "sass-loader": "^7.1.0",
+    "serve": "^10.1.1"
+  }
+}
