@@ -36,11 +36,7 @@ export default {
   head: {
     htmlAttrs: {
       lang: LANG
-    },
-    link: [{
-      rel: "stylesheet",
-      href: "https://fonts.googleapis.com/css?family=Roboto+Mono:400,700"
-    }]
+    }
   },
   // Loading Bar
   loading: {
@@ -48,6 +44,7 @@ export default {
   },
   // Modules
   modules: [
+    "nuxt-webfontloader",
     "@nuxtjs/pwa"
   ],
   // Plugins
@@ -58,6 +55,14 @@ export default {
   css: [
     "styles/index.scss"
   ],
+  // Web Fonts
+  webfontloader: {
+    google: {
+      families: [
+        "Roboto+Mono:400,700"
+      ]
+    }
+  },
   // Messages https://git.io/fpy8U
   messages: {
     back_to_home: "Home",
