@@ -5,6 +5,7 @@ const NAME = "Nuxtflix"
 const THEME = "#2E3033"
 const LOADING = "#FA0C44"
 const DESCRIPTION = "Nuxt + Netlify + Contentful = Awesome"
+const KEYWORDS = ["nuxt", "netlify", "contentful"]
 
 export default {
   // Server
@@ -36,7 +37,17 @@ export default {
   head: {
     htmlAttrs: {
       lang: LANG
-    }
+    },
+    meta: [{
+      hid: "keywords",
+      name: "keywords",
+      content: KEYWORDS.join(",")
+    }],
+    link: [{
+      rel: "icon",
+      type: "image/x-icon",
+      href: "favicon.ico"
+    }]
   },
   // Loading Bar
   loading: {
