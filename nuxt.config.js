@@ -71,10 +71,5 @@ export default {
   // Build
   generate,
   srcDir: "src",
-  modern: "client",
-  build: {
-    splitChunks: {
-      pages: false
-    }
-  }
+  modern: "client"
 }
