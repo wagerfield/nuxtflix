@@ -1,15 +1,15 @@
 import Vue from "vue"
 
-export default (context, inject) => {
+export default () => {
   if (process.client) {
     // Before install prompt handler
     window.addEventListener("beforeinstallprompt", (event) => {
       event.preventDefault()
       console.log("beforeinstallprompt", event)
-      inject("install", () => {
+      Vue.prototype.$install = () => {
         console.log("install", event)
         event.prompt()
-      })
+      }
     })
 
     // App installed handler
@@ -23,5 +23,7 @@ export default (context, inject) => {
     Vue.prototype.$standalone = Boolean(matches)
 
     console.log("standalone:", Vue.prototype.$standalone)
+  } else {
+    Vue.prototype.$standalone = false
   }
 }
