@@ -61,7 +61,7 @@ export default {
   // Plugins
   plugins: [
     "plugins/components",
-    "plugins/install"
+    "plugins/installer"
   ],
   // Styles
   css: [
