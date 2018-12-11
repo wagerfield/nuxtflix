@@ -2,16 +2,19 @@ import Vue from "vue"
 
 export default (context, inject) => {
   if (process.client) {
-    // Install prompt handler
+    // Before install prompt handler
     window.addEventListener("beforeinstallprompt", (event) => {
       event.preventDefault()
-      console.log("beforeinstallprompt")
-      inject("install", event.prompt)
+      console.log("beforeinstallprompt", event)
+      inject("install", () => {
+        console.log("install", event)
+        event.prompt()
+      })
     })
 
     // App installed handler
     window.addEventListener("appinstalled", (event) => {
-      console.log("appinstalled")
+      console.log("appinstalled", event)
     })
 
     // Standalone flag
