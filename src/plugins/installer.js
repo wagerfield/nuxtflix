@@ -11,7 +11,7 @@ export default ({ store }, inject) => {
       event.preventDefault()
       installer = event
       installer.userChoice.then(({ outcome }) => {
-        console.log(`User ${outcome} A2HS prompt`)
+        console.log(`User ${outcome} prompt`)
         installer = null
       })
       store.commit("setInstalled", false)
