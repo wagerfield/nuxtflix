@@ -1,6 +1,6 @@
 <template>
   <header>
-    <nuxt-link to="/">Nuxtflix [develop]</nuxt-link>
+    <nuxt-link to="/">Nuxtflix</nuxt-link>
     <nav>
       <ul>
         <li v-for="link in links" :key="link.key">
