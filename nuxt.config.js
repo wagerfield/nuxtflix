@@ -39,6 +39,11 @@ export default {
     htmlAttrs: {
       lang: LANG
     },
+    link: [{
+      rel: "preconnect",
+      href: "https://fonts.googleapis.com/",
+      crossorigin: "anonymous"
+    }],
     meta: [{
       hid: "keywords",
       name: "keywords",
@@ -70,9 +75,7 @@ export default {
   // Web Fonts
   webfontloader: {
     google: {
-      families: [
-        "Roboto+Mono:400,700"
-      ]
+      families: ["Roboto+Mono:400,700"]
     }
   },
   // Messages https://git.io/fpy8U
