@@ -1,4 +1,5 @@
 import generate from "./generate"
+import hooks from "./hooks"
 
 const LANG = "en"
 const NAME = "Nuxtflix"
@@ -80,6 +81,7 @@ export default {
     error_404: "Page not found",
   },
   // Build
+  hooks,
   generate,
   srcDir: "src",
   modern: "client"
