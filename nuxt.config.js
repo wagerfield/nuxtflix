@@ -47,7 +47,7 @@ export default {
   },
   // Icons
   icon: {
-    sizes: [16, 32, 64, 120, 144, 152, 192, 384, 512]
+    sizes: [32, 64, 120, 144, 152, 192, 384, 512]
   },
   // Loading Bar
   loading: {
