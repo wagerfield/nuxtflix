@@ -9,3 +9,15 @@ h2,
 h3 {
   margin: 0;
 }
+
+@media all and (display-mode: standalone) {
+  .browser {
+    display: none;
+  }
+}
+
+@media all and (display-mode: browser) {
+  .standalone {
+    display: none;
+  }
+}
