@@ -1,13 +1,13 @@
 import Vue from "vue"
 
 export default () => {
-  let installPrompt = null
+  let installPromptEvent = null
 
   Vue.prototype.$standalone = false
 
   Vue.prototype.$install = () => {
-    console.log("install:", installPrompt)
-    if (installPrompt) installPrompt()
+    console.log("install:", installPromptEvent)
+    if (installPromptEvent) installPromptEvent.prompt()
   }
 
   if (process.client) {
@@ -15,7 +15,7 @@ export default () => {
     window.addEventListener("beforeinstallprompt", (event) => {
       event.preventDefault()
       console.log("beforeinstallprompt", event)
-      installPrompt = event.prompt
+      installPromptEvent = event
     })
 
     // App installed handler
