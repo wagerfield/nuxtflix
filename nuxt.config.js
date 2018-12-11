@@ -25,12 +25,12 @@ export default {
     twitterSite: "@wagerfield",
     twitterCard: "summary"
   },
-  // Manifest https://developer.mozilla.org/en-US/docs/Web/Manifest
+  // Manifest https://developer.mozilla.org/docs/web/manifest
   manifest: {
     name: NAME,
     short_name: NAME,
-    theme_color: THEME,
-    background_color: THEME,
+    theme_color: "blue",
+    background_color: "red",
     description: DESCRIPTION
   },
   // Head
