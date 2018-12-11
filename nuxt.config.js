@@ -2,8 +2,8 @@ import generate from "./generate"
 
 const LANG = "en"
 const NAME = "Nuxtflix"
-const THEME = "#2E3033"
-const LOADING = "#FA0C44"
+const THEME = "#302e33"
+const LOADING = "#fa0c54"
 const DESCRIPTION = "Nuxt + Netlify + Contentful = Awesome"
 const KEYWORDS = ["nuxt", "netlify", "contentful"]
 
@@ -42,11 +42,6 @@ export default {
       hid: "keywords",
       name: "keywords",
       content: KEYWORDS.join(",")
-    }],
-    link: [{
-      rel: "icon",
-      type: "image/x-icon",
-      href: "favicon.ico"
     }]
   },
   // Loading Bar
