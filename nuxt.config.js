@@ -18,7 +18,7 @@ export default {
     lang: LANG,
     name: NAME,
     description: DESCRIPTION,
-    theme_color: THEME,
+    theme_color: THEME, // Browser chrome colour
     mobileAppIOS: true,
     ogHost: "https://nuxtflix.com/",
     ogImage: "og.png",
@@ -29,8 +29,8 @@ export default {
   manifest: {
     name: NAME,
     short_name: NAME,
-    theme_color: "blue",
-    background_color: "red",
+    theme_color: THEME, // Browser chrome colour
+    background_color: THEME, // Splash screen background colour
     description: DESCRIPTION
   },
   // Head
