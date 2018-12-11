@@ -38,6 +38,11 @@ export default {
     htmlAttrs: {
       lang: LANG
     },
+    link: [{
+      rel: "icon",
+      type: "image/x-icon",
+      href: "favicon.ico"
+    }],
     meta: [{
       hid: "keywords",
       name: "keywords",
