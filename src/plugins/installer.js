@@ -1,4 +1,4 @@
-export default (context, inject) => {
+export default ({ store }, inject) => {
   let installer = null
 
   inject("install", () => {
@@ -14,6 +14,7 @@ export default (context, inject) => {
         console.log(`User ${outcome} A2HS prompt`)
         installer = null
       })
+      store.commit("setInstalled", false)
     })
 
     // App installed handler
