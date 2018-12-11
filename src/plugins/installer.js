@@ -12,7 +12,6 @@ export default ({ store }, inject) => {
       installer = event
       installer.userChoice.then(({ outcome }) => {
         console.log(`User ${outcome} prompt`)
-        installer = null
       })
       store.commit("setInstalled", false)
     })
