@@ -13,12 +13,12 @@
   },
   "scripts": {
     "dev": "nuxt",
-    "build": "nuxt build",
-    "analyse": "nuxt build -a",
-    "analyze": "nuxt build -a",
-    "generate": "nuxt generate",
-    "start": "nuxt start",
     "serve": "serve dist",
+    "analyse": "nuxt build --analyze",
+    "analyze": "nuxt build --analyze",
+    "build": "nuxt build --modern=server",
+    "start": "nuxt start --modern=server",
+    "generate": "nuxt generate --modern=client",
     "format": "prettier --write '*.{js,md}' 'src/**/*.{js,json,scss,vue}'",
     "precommit": "yarn format"
   },
