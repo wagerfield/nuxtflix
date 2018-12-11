@@ -39,16 +39,15 @@ export default {
     htmlAttrs: {
       lang: LANG
     },
-    link: [{
-      rel: "icon",
-      type: "image/x-icon",
-      href: "favicon.ico"
-    }],
     meta: [{
       hid: "keywords",
       name: "keywords",
       content: KEYWORDS.join(",")
     }]
+  },
+  // Icons
+  icon: {
+    sizes: [16, 32, 64, 120, 144, 152, 192, 384, 512]
   },
   // Loading Bar
   loading: {
