@@ -61,7 +61,8 @@ export default {
   ],
   // Plugins
   plugins: [
-    "plugins/components"
+    "plugins/components",
+    "plugins/install"
   ],
   // Styles
   css: [
@@ -83,6 +84,5 @@ export default {
   // Build
   hooks,
   generate,
-  srcDir: "src",
-  modern: "client"
+  srcDir: "src"
 }
