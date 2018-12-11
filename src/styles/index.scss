@@ -1,13 +1,9 @@
-html,
 body {
-  font-family: "Roboto Mono", "Lucida Console", "Monaco", monospace;
-  margin: 0;
-}
+  font-family: "Lucida Console", "Monaco", monospace;
 
-h1,
-h2,
-h3 {
-  margin: 0;
+  .wf-active & {
+    font-family: "Roboto Mono";
+  }
 }
 
 @media all and (display-mode: standalone) {

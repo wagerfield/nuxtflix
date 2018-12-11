@@ -70,6 +70,7 @@ export default {
   ],
   // Styles
   css: [
+    "normalize.css",
     "styles/index.scss"
   ],
   // Web Fonts
