@@ -7,7 +7,7 @@ export default () => {
     html.classList.add("fonts-loading")
 
     const promises = [
-      ["Alfa Slab One", { weight: 700 }],
+      // ["Alfa Slab One", { weight: 700 }],
       ["Roboto Mono", { weight: 700 }],
       ["Roboto Mono"]
     ].map(([family, options]) => {

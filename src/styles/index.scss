@@ -10,14 +10,14 @@ body {
   }
 }
 
-h1,
-h2 {
-  font-family: $heading-font-fallback;
+// h1,
+// h2 {
+//   font-family: $heading-font-fallback;
 
-  .fonts-loaded & {
-    font-family: $heading-font-family;
-  }
-}
+//   .fonts-loaded & {
+//     font-family: $heading-font-family;
+//   }
+// }
 
 @media all and (display-mode: standalone) {
   .browser {
