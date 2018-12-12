@@ -19,6 +19,7 @@ export default ({ store }, inject) => {
     // App installed handler
     window.addEventListener("appinstalled", (event) => {
       console.log("App installed", event)
+      store.commit("setInstalled", true)
     })
   }
 }
