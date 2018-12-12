@@ -1,5 +1,5 @@
 export default () => {
-  if (process.client) {
+  if (process.client && !sessionStorage.fontsLoaded) {
     const FontFaceObserver = require("fontfaceobserver")
 
     const html = document.documentElement
