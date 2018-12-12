@@ -1,8 +1,22 @@
-body {
-  font-family: "Lucida Console", "Monaco", monospace;
+@import "mixins";
+@import "theme";
+@import "fonts";
 
-  .wf-active & {
-    font-family: "Roboto Mono";
+body {
+  font-family: $body-font-fallback;
+
+  .fonts-loaded & {
+    font-family: $body-font-family;
+  }
+}
+
+h1,
+h2 {
+  font-family: $heading-font-fallback;
+
+  .fonts-loaded & {
+    font-family: $heading-font-family;
+    font-weight: 400;
   }
 }
 
