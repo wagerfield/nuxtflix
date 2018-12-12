@@ -5,19 +5,10 @@
 body {
   font-family: $body-font-fallback;
 
-  .fonts-loaded & {
+  .wf-active & {
     font-family: $body-font-family;
   }
 }
-
-// h1,
-// h2 {
-//   font-family: $heading-font-fallback;
-
-//   .fonts-loaded & {
-//     font-family: $heading-font-family;
-//   }
-// }
 
 @media all and (display-mode: standalone) {
   .browser {
