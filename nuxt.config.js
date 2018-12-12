@@ -1,5 +1,5 @@
-import generate from "./generate"
-import hooks from "./hooks"
+import generate from "./nuxt.generate"
+import hooks from "./nuxt.hooks"
 
 const LANG = "en"
 const NAME = "Nuxtflix"
@@ -14,7 +14,7 @@ export default {
     host: "0.0.0.0",
     port: 5000
   },
-  // Meta https://pwa.nuxtjs.org/modules/meta.html
+  // Meta https://pwa.nuxtjs.org/modules/meta
   meta: {
     lang: LANG,
     name: NAME,
@@ -34,25 +34,20 @@ export default {
     background_color: THEME, // Splash screen background colour
     description: DESCRIPTION
   },
+  // Workbox https://pwa.nuxtjs.org/modules/workbox
+  workbox: {
+    offlineAssets: ["fonts/*"]
+  },
   // Head
   head: {
     htmlAttrs: {
       lang: LANG
     },
-    link: [{
-      rel: "preconnect",
-      href: "https://fonts.googleapis.com/",
-      crossorigin: "anonymous"
-    }],
     meta: [{
       hid: "keywords",
       name: "keywords",
       content: KEYWORDS.join(",")
     }]
-  },
-  // Icons
-  icon: {
-    sizes: [32, 64, 120, 144, 152, 192, 384, 512]
   },
   // Loading Bar
   loading: {
@@ -60,11 +55,11 @@ export default {
   },
   // Modules
   modules: [
-    "nuxt-webfontloader",
     "@nuxtjs/pwa"
   ],
   // Plugins
   plugins: [
+    "plugins/fonts",
     "plugins/components",
     "plugins/installer"
   ],
@@ -73,12 +68,6 @@ export default {
     "normalize.css",
     "styles/index.scss"
   ],
-  // Web Fonts
-  webfontloader: {
-    google: {
-      families: ["Roboto+Mono:400,700"]
-    }
-  },
   // Messages https://git.io/fpy8U
   messages: {
     back_to_home: "Home",
