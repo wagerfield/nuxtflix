@@ -5,7 +5,6 @@ const fonts = {
   styles: "src/styles",
   dest: "src/static/fonts",
   src: [
-    "assets/fonts/AlfaSlabOne-Regular.ttf",
     "assets/fonts/RobotoMono-Regular.ttf",
     "assets/fonts/RobotoMono-Bold.ttf"
   ]
