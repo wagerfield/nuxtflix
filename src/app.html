@@ -6,19 +6,19 @@
     }}
     <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
     <script>
-      // if (sessionStorage.fontsLoaded) {
-      //   document.documentElement.classList.add("wf-active")
-      // }
+      if (sessionStorage.fontsLoaded) {
+        document.documentElement.classList.add("wf-active")
+      }
       WebFont.load({
         google: {
           families: ["Roboto+Mono:400,700"]
+        },
+        active: function() {
+          sessionStorage.fontsLoaded = true
+        },
+        inactive: function() {
+          sessionStorage.fontsLoaded = false
         }
-        // active: function() {
-        //   sessionStorage.fontsLoaded = true
-        // },
-        // inactive: function() {
-        //   sessionStorage.fontsLoaded = false
-        // }
       })
     </script>
   </head>
