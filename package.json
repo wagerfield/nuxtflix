@@ -25,15 +25,14 @@
   "dependencies": {
     "@nuxtjs/pwa": "^2.6.0",
     "case": "^1.6.0",
-    "fontfaceobserver": "^2.1.0",
     "normalize.css": "^8.0.1",
-    "nuxt": "^2.3.4"
+    "nuxt": "^2.3.4",
+    "webfontloader": "^1.6.28"
   },
   "devDependencies": {
     "gulp": "^4.0.0",
     "gulp-clean": "^0.4.0",
     "gulp-load-plugins": "^1.5.0",
-    "gulp-rename": "^1.4.0",
     "gulp-ttf2woff": "^1.1.1",
     "gulp-ttf2woff2": "^2.0.2",
     "node-sass": "^4.10.0",
