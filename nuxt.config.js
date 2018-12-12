@@ -35,9 +35,9 @@ export default {
     description: DESCRIPTION
   },
   // Workbox https://pwa.nuxtjs.org/modules/workbox
-  workbox: {
-    offlineAssets: ["/fonts/*"]
-  },
+  // workbox: {
+  //   offlineAssets: ["/fonts/*"]
+  // },
   // Head
   head: {
     htmlAttrs: {
