@@ -4,14 +4,14 @@
   $weight: 400,
   $style: normal,
   $stretch: normal,
-  // $display: auto
+  $display: swap
 ) {
   @font-face {
     font-family: $family;
     font-weight: $weight;
     font-style: $style;
     font-stretch: $stretch;
-    // font-display: $display;
+    font-display: $display;
     src: local($family), local($filename),
       url("/fonts/#{$filename}.woff2") format("woff2"),
       url("/fonts/#{$filename}.woff") format("woff");
