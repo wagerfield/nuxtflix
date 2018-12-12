@@ -35,9 +35,10 @@ export default {
     description: DESCRIPTION
   },
   // Workbox https://pwa.nuxtjs.org/modules/workbox
-  // workbox: {
-  //   offlineAssets: ["/fonts/*"]
-  // },
+  workbox: {
+    cachingExtensions: "sw/caching.js",
+    routingExtensions: "sw/routing.js"
+  },
   // Head
   head: {
     htmlAttrs: {
