@@ -44,6 +44,11 @@ export default {
     htmlAttrs: {
       lang: LANG
     },
+    link: [{
+      once: true,
+      rel: "stylesheet",
+      href: "https://fonts.googleapis.com/css?family=Roboto+Mono:400,700"
+    }],
     meta: [{
       hid: "keywords",
       name: "keywords",
