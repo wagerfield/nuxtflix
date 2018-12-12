@@ -17,8 +17,8 @@
     "analyse": "nuxt build --analyze",
     "analyze": "nuxt build --analyze",
     "start": "nuxt start --modern=server",
-    "build": "gulp && nuxt build --modern=server",
-    "generate": "gulp && nuxt generate --modern=client",
+    "build": "nuxt build --modern=server",
+    "generate": "nuxt generate --modern=client",
     "format": "prettier --write '*.{js,md}' 'src/**/*.{js,json,scss,vue}'",
     "precommit": "yarn format"
   },
