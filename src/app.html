@@ -10,8 +10,12 @@
         document.documentElement.classList.add("wf-active")
       }
       WebFont.load({
+        custom: {
+          // https://github.com/typekit/fvd
+          families: ["Salome:n7"]
+        },
         google: {
-          families: ["Roboto+Mono:400,700"]
+          families: ["Roboto Mono:400,700"]
         },
         active: function() {
           sessionStorage.fontsLoaded = true
