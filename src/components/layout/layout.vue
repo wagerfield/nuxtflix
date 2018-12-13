@@ -1,5 +1,5 @@
 <template>
-  <component :is="tag" :class="classes"> <slot /> </component>
+  <component class="layout" :class="classes" :is="tag"><slot /></component>
 </template>
 
 <script>
@@ -26,6 +26,7 @@ export default {
     },
     direction: {
       type: String,
+      default: "row",
       validate: validate(DIRECTION)
     },
     justifyContent: {
@@ -47,8 +48,20 @@ export default {
   },
   computed: {
     classes() {
-      return []
+      return [this.direction]
     }
   }
 }
 </script>
+
+<style lang="scss">
+.layout {
+  display: flex;
+  .row {
+    flex-direction: row;
+  }
+  .column {
+    flex-direction: column;
+  }
+}
+</style>

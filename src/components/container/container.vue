@@ -1,5 +1,5 @@
 <template>
-  <component :is="tag"><slot /></component>
+  <component class="container" :is="tag"><slot /></component>
 </template>
 
 <script>
@@ -12,3 +12,9 @@ export default {
   }
 }
 </script>
+
+<style>
+.container {
+  display: flex;
+}
+</style>

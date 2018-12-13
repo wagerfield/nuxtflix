@@ -1,9 +1,17 @@
 <template>
-  <footer>
-    <nav>
-      <ul>
-        <li v-for="link in links" :key="link.key">
-          <nuxt-link :to="link.path" v-text="link.text" />
+  <footer class="global-footer">
+    <nav class="global-footer-nav">
+      <ul class="global-footer-nav-list">
+        <li
+          v-for="link in links"
+          :key="link.key"
+          class="global-footer-nav-item"
+        >
+          <nuxt-link
+            class="global-footer-nav-link"
+            v-text="link.text"
+            :to="link.path"
+          />
         </li>
       </ul>
     </nav>
@@ -30,9 +38,26 @@ export default {
           key: "contact",
           path: "/contact",
           text: "Contact"
+        },
+        {
+          key: "offline",
+          path: "/offline",
+          text: "Offline"
         }
       ]
     }
   }
 }
 </script>
+
+<style lang="scss">
+.global-footer {
+  background-color: $black;
+  min-height: 200px;
+}
+.global-footer-nav-link {
+  padding: 0.5rem 0.75rem;
+  display: block;
+  color: $white;
+}
+</style>

@@ -4,7 +4,7 @@
 
 <script>
 import { capital } from "case"
-import { FILMS } from "@/core/constants"
+import { FILMS } from "~/core/constants"
 
 export default {
   validate({ params }) {
@@ -12,7 +12,7 @@ export default {
   },
   computed: {
     title() {
-      return `Film: ${capital(this.$route.params.id)}`
+      return capital(this.$route.params.id)
     }
   }
 }

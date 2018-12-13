@@ -10,8 +10,8 @@
 </template>
 
 <script>
-import { FILMS } from "@/core/constants"
 import { capital } from "case"
+import { FILMS } from "~/core/constants"
 
 export default {
   data() {
