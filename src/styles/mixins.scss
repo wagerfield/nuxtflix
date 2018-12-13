@@ -12,8 +12,7 @@
     font-style: $style;
     font-stretch: $stretch;
     font-display: $display;
-    src: local($family), local($filename),
-      url("/fonts/#{$filename}.woff2") format("woff2"),
+    src: url("/fonts/#{$filename}.woff2") format("woff2"),
       url("/fonts/#{$filename}.woff") format("woff");
   }
 }

@@ -1,23 +1,46 @@
-@import "mixins";
-@import "theme";
-@import "fonts";
+@include font-face("Salome", "salome-regular", 700);
 
-body {
+html {
+  font-size: 18px;
   font-family: $body-font-fallback;
+  background-color: $white;
+  color: $black;
 
-  .wf-active & {
+  &.wf-active {
     font-family: $body-font-family;
   }
 }
 
-@media all and (display-mode: standalone) {
-  .browser {
-    display: none;
+h1,
+h2 {
+  font-size: 3.5rem;
+  font-family: $heading-font-fallback;
+
+  .wf-active & {
+    font-family: $heading-font-family;
   }
 }
 
-@media all and (display-mode: browser) {
-  .standalone {
-    display: none;
-  }
+ol,
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
+
+a {
+  text-decoration: none;
+  color: $red;
+}
+
+// @media all and (display-mode: standalone) {
+//   .browser {
+//     display: none;
+//   }
+// }
+
+// @media all and (display-mode: browser) {
+//   .standalone {
+//     display: none;
+//   }
+// }
