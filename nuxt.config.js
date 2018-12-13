@@ -3,8 +3,8 @@ import hooks from "./nuxt.hooks"
 
 const LANG = "en"
 const NAME = "Nuxtflix"
-const THEME = "#302e33"
-const LOADING = "#fa0c54"
+const THEME = "#17171a"
+const LOADING = "#2febac"
 const DESCRIPTION = "Nuxt + Netlify + Contentful = Awesome"
 const KEYWORDS = ["nuxt", "netlify", "contentful"]
 
@@ -19,7 +19,6 @@ export default {
     lang: LANG,
     name: NAME,
     description: DESCRIPTION,
-    theme_color: THEME, // Browser chrome colour
     mobileAppIOS: true,
     ogHost: "https://nuxtflix.com/",
     ogImage: "og.png",
@@ -57,25 +56,38 @@ export default {
   },
   // Modules
   modules: [
+    "@nuxtjs/style-resources",
     "@nuxtjs/pwa"
   ],
   // Plugins
   plugins: [
     "plugins/components",
-    "plugins/installer"
+    "plugins/installer",
+    "plugins/offline"
   ],
   // Styles
   css: [
     "normalize.css",
     "styles/index.scss"
   ],
+  styleResources: {
+    scss: [
+      "styles/mixins.scss",
+      "styles/theme.scss"
+    ]
+  },
+  // Router
+  router: {
+    linkActiveClass: "link-active",
+    linkExactActiveClass: "link-active-exact"
+  },
   // Messages https://git.io/fpy8U
   messages: {
     back_to_home: "Home",
     error_404: "Page not found",
   },
   // Build
-  hooks,
+  srcDir: "src",
   generate,
-  srcDir: "src"
+  hooks
 }
