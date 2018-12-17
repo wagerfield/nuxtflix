@@ -40,9 +40,24 @@ export default {
           text: "Contact"
         },
         {
+          key: "typography",
+          path: "/typography",
+          text: "Typography"
+        },
+        {
+          key: "palette",
+          path: "/palette",
+          text: "Palette"
+        },
+        {
           key: "offline",
           path: "/offline",
           text: "Offline"
+        },
+        {
+          key: "error",
+          path: "/error",
+          text: "Error"
         }
       ]
     }
@@ -55,6 +70,7 @@ export default {
   background-color: $black;
   min-height: 200px;
 }
+
 .global-footer-nav-link {
   padding: 0.5rem 0.75rem;
   display: block;
