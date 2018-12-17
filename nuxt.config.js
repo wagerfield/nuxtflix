@@ -3,8 +3,8 @@ import hooks from "./nuxt.hooks"
 
 const LANG = "en"
 const NAME = "Nuxtflix"
-const THEME = "#13131a"
-const LOADING = "#4c92d9"
+const THEME = "#13131A"
+const LOADING = "#FFFFFF"
 const DESCRIPTION = "Nuxt + Netlify + Contentful = Awesome"
 const KEYWORDS = ["nuxt", "netlify", "contentful"]
 
