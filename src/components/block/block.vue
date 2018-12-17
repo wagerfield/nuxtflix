@@ -1,10 +1,14 @@
 <template>
-  <v-layout :style="style"> <slot /> </v-layout>
+  <component class="block" :is="tag" :style="style"><slot /></component>
 </template>
 
 <script>
 export default {
   props: {
+    tag: {
+      type: String,
+      default: "div"
+    },
     color: {
       type: String,
       default: "#EEE"
@@ -29,3 +33,11 @@ export default {
   }
 }
 </script>
+
+<style lang="scss">
+.block {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+</style>
