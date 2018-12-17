@@ -35,7 +35,7 @@ export default {
   },
   // Workbox https://pwa.nuxtjs.org/modules/workbox
   workbox: {
-    offlinePage: "/offline.html",
+    // offlinePage: "/offline.html",
     cachingExtensions: "sw/caching.js",
     routingExtensions: "sw/routing.js"
   },
