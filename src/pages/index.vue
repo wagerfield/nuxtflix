@@ -1,7 +1,7 @@
 <template>
   <div>
     <h1>Index</h1>
-    <button v-if="!installed" @click="$install">Install</button>
+    <button v-if="install" @click="$install">Install</button>
   </div>
 </template>
 
@@ -9,6 +9,6 @@
 import { mapState } from "vuex"
 
 export default {
-  computed: mapState(["installed"])
+  computed: mapState(["install"])
 }
 </script>
