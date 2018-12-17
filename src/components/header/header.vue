@@ -44,10 +44,6 @@ export default {
 <style lang="scss">
 .global-header {
   background-color: $black;
-  box-sizing: border-box;
-  max-width: $max-width;
-  width: 100%;
-  margin: 0 auto;
   display: flex;
   padding: 0.75rem;
   justify-content: space-between;
@@ -56,13 +52,11 @@ export default {
     border-top: 4px solid $red;
   }
 }
-.global-header-offline {
-  background-color: $red;
-  color: $white;
-}
+
 .global-header-nav-list {
   display: flex;
 }
+
 .global-header-nav-link,
 .global-header-root-link {
   padding: 0.5rem 0.75rem;
@@ -73,6 +67,7 @@ export default {
     box-shadow: 0 0 0 1px $white inset;
   }
 }
+
 .global-header-nav-link.link-active,
 .global-header-root-link.link-active-exact {
   color: $red;
