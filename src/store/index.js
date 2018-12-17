@@ -1,11 +1,11 @@
 export default {
   state: () => ({
-    installed: true,
+    install: false,
     offline: false
   }),
   mutations: {
-    setInstalled(state, installed) {
-      state.installed = installed
+    setInstall(state, install) {
+      state.install = install
     },
     setOffline(state, offline) {
       state.offline = offline
