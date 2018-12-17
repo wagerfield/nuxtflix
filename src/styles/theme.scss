@@ -1,5 +1,5 @@
-$heading-font-fallback: "Helvetica", "Arial", sans-serif;
-$heading-font-family: "Salome", $heading-font-fallback;
+$heading-font-fallback: "Times New Roman", serif;
+$heading-font-family: "Playfair Display", $heading-font-fallback;
 
 $body-font-fallback: "Monaco", monospace;
 $body-font-family: "Roboto Mono", $body-font-fallback;
@@ -16,6 +16,10 @@ $yellow: #ffd659;
 $green: #45e6b0;
 $blue: #4c92d9;
 $sage: #c6e5df;
+
+$text-color: $black;
+$link-color: $blue;
+$selection-color: $yellow;
 
 $min-width: 320px;
 $max-width: 1080px;

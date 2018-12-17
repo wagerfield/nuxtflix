@@ -1,10 +1,15 @@
-@include font-face("Salome", "salome-regular", 700);
+@include font-face("Playfair Display", "PlayfairDisplay-Black", 700);
 
 html {
-  font-size: 18px;
+  font-size: 16px;
+  line-height: 1.5em;
+  font-feature-settings: "lnum" on;
   font-family: $body-font-fallback;
   background-color: $white;
-  color: $black;
+  min-width: $min-width;
+  max-width: 100vw;
+  overflow-x: hidden;
+  color: $text-color;
 
   &.wf-active {
     font-family: $body-font-family;
@@ -13,12 +18,24 @@ html {
 
 h1,
 h2 {
-  font-size: 3.5rem;
   font-family: $heading-font-fallback;
+  line-height: 1.4em;
 
   .wf-active & {
     font-family: $heading-font-family;
   }
+}
+
+h1 {
+  font-size: 3rem;
+}
+
+h2 {
+  font-size: 1.8rem;
+}
+
+h3 {
+  font-size: 1.2rem;
 }
 
 ol,
@@ -29,18 +46,22 @@ ul {
 }
 
 a {
+  color: $link-color;
   text-decoration: none;
-  color: $red;
 }
 
-// @media all and (display-mode: standalone) {
-//   .browser {
-//     display: none;
-//   }
-// }
+::selection {
+  background: $selection-color;
+}
 
-// @media all and (display-mode: browser) {
-//   .standalone {
-//     display: none;
-//   }
-// }
+@media all and (display-mode: standalone) {
+  .browser {
+    display: none;
+  }
+}
+
+@media all and (display-mode: browser) {
+  .standalone {
+    display: none;
+  }
+}
