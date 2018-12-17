@@ -50,6 +50,11 @@ a {
   text-decoration: none;
 }
 
+:focus {
+  outline: $outline;
+  outline-offset: -$outline-width;
+}
+
 ::selection {
   background: $selection-color;
 }

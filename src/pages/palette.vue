@@ -27,15 +27,15 @@ export default {
         token: "stone"
       },
       {
-        hex: "#43434d",
+        hex: "#49494d",
         token: "slate"
       },
       {
-        hex: "#2b2b33",
+        hex: "#303033",
         token: "night"
       },
       {
-        hex: "#13131a",
+        hex: "#17171a",
         token: "black"
       },
       {

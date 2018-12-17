@@ -7,9 +7,9 @@ $body-font-family: "Roboto Mono", $body-font-fallback;
 $white: #ffffff;
 $smoke: #f3f3f5;
 $stone: #e1e1e6;
-$slate: #43434d;
-$night: #2b2b33;
-$black: #13131a;
+$slate: #49494d;
+$night: #303033;
+$black: #17171a;
 
 $red: #ff5b4c;
 $yellow: #ffd659;
@@ -20,6 +20,11 @@ $sage: #c6e5df;
 $text-color: $black;
 $link-color: $blue;
 $selection-color: $yellow;
+
+$outline-width: 3px;
+$outline-style: solid;
+$outline-color: $yellow;
+$outline: $outline-color $outline-style $outline-width;
 
 $min-width: 320px;
 $max-width: 1080px;
