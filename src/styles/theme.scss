@@ -1,8 +1,11 @@
 $heading-font-fallback: "Times New Roman", serif;
 $heading-font-family: "Playfair Display", $heading-font-fallback;
 
-$body-font-fallback: "Monaco", monospace;
-$body-font-family: "Roboto Mono", $body-font-fallback;
+$body-font-fallback: "Times New Roman", serif;
+$body-font-family: "Merriweather", $body-font-fallback;
+
+$mono-font-fallback: "Monaco", monospace;
+$mono-font-family: "Roboto Mono", $mono-font-fallback;
 
 $white: #ffffff;
 $smoke: #f3f3f5;
@@ -20,11 +23,16 @@ $sage: #c6e5df;
 $text-color: $black;
 $link-color: $blue;
 $selection-color: $yellow;
+$tap-color: rgba($yellow, 0.5);
 
 $outline-width: 3px;
 $outline-style: solid;
 $outline-color: $yellow;
 $outline: $outline-color $outline-style $outline-width;
 
+$desktop-breakpoint: 720px;
+
 $min-width: 320px;
 $max-width: 1080px;
+
+$header-height: 3.5rem;
