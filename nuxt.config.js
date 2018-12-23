@@ -35,7 +35,6 @@ export default {
   },
   // Workbox https://pwa.nuxtjs.org/modules/workbox
   workbox: {
-    // offlinePage: "/offline.html",
     cachingExtensions: "sw/caching.js",
     routingExtensions: "sw/routing.js"
   },
@@ -73,6 +72,9 @@ export default {
     ssr: false
   }, {
     src: 'plugins/offline',
+    ssr: false
+  }, {
+    src: 'plugins/outline',
     ssr: false
   }],
   // Styles https://nuxtjs.org/api/configuration-css
