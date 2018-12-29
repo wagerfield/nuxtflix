@@ -1,7 +1,7 @@
 <template>
   <div>
     <h1>Index</h1>
-    <button v-if="install" @click="$install">Install</button>
+    <v-button v-if="install" @click="$install">Install</v-button>
   </div>
 </template>
 
