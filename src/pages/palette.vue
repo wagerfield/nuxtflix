@@ -15,19 +15,19 @@ export default {
   data: () => ({
     colors: [
       {
-        hex: "#ffffff",
+        hex: "#FFFFFF",
         token: "white"
       },
       {
-        hex: "#f3f3f5",
+        hex: "#F3F3F5",
         token: "smoke"
       },
       {
-        hex: "#e1e1e6",
+        hex: "#E1E1E6",
         token: "stone"
       },
       {
-        hex: "#49494d",
+        hex: "#49494D",
         token: "slate"
       },
       {
@@ -35,27 +35,27 @@ export default {
         token: "night"
       },
       {
-        hex: "#17171a",
+        hex: "#17171A",
         token: "black"
       },
       {
-        hex: "#ff5b4c",
+        hex: "#FF5B4C",
         token: "red"
       },
       {
-        hex: "#ffd659",
+        hex: "#FFD659",
         token: "yellow"
       },
       {
-        hex: "#45e6b0",
+        hex: "#45E6B0",
         token: "green"
       },
       {
-        hex: "#4c92d9",
+        hex: "#4C92D9",
         token: "blue"
       },
       {
-        hex: "#c6e5df",
+        hex: "#C6E5DF",
         token: "sage"
       }
     ]
