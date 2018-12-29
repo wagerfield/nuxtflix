@@ -1,5 +1,5 @@
 <template>
-  <footer class="global-footer">
+  <footer class="global-footer grid mono">
     <nav class="global-footer-nav">
       <ul class="global-footer-nav-list">
         <li
@@ -50,11 +50,6 @@ export default {
           text: "Palette"
         },
         {
-          key: "offline",
-          path: "/offline",
-          text: "Offline"
-        },
-        {
           key: "error",
           path: "/error",
           text: "Error"
@@ -71,9 +66,15 @@ export default {
   min-height: 200px;
 }
 
+.global-footer-nav {
+  grid-column: content;
+}
+
 .global-footer-nav-link {
-  padding: 0.5rem 0.75rem;
+  padding: 0.5rem 0;
   display: block;
+  line-height: 1;
+  font-size: 14px;
   color: $white;
 }
 </style>
