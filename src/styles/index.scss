@@ -1,41 +1,79 @@
 @include font-face("Playfair Display", "PlayfairDisplay-Black", 700);
 
+* {
+  -webkit-tap-highlight-color: $tap-color;
+}
+
 html {
   font-size: 16px;
-  line-height: 1.5em;
-  font-feature-settings: "lnum" on;
   font-family: $body-font-fallback;
+  line-height: 1.5;
+
+  color: $text-color;
   background-color: $white;
+
   min-width: $min-width;
   max-width: 100vw;
+
   overflow-x: hidden;
-  color: $text-color;
 
   &.wf-active {
     font-family: $body-font-family;
   }
+
+  @include desktop {
+    font-size: 18px;
+  }
 }
 
 h1,
-h2 {
+h2,
+h3,
+.h1,
+.h2,
+.h3 {
   font-family: $heading-font-fallback;
-  line-height: 1.4em;
+  line-height: 1.1;
+  margin: 0;
 
   .wf-active & {
     font-family: $heading-font-family;
   }
 }
 
-h1 {
-  font-size: 3rem;
+h1,
+.h1 {
+  font-size: 3.5rem;
 }
 
-h2 {
-  font-size: 1.8rem;
+h2,
+.h2 {
+  font-size: 2rem;
+  line-height: 1.15;
 }
 
-h3 {
-  font-size: 1.2rem;
+h3,
+.h3 {
+  font-size: 1.4rem;
+  line-height: 1.2;
+}
+
+p {
+  margin: 1rem 0;
+}
+
+a {
+  color: $link-color;
+  text-decoration: none;
+}
+
+.mono {
+  font-size: 0.875rem;
+  font-family: $mono-font-fallback;
+
+  .wf-active & {
+    font-family: $mono-font-family;
+  }
 }
 
 ol,
@@ -45,18 +83,22 @@ ul {
   margin: 0;
 }
 
-a {
-  color: $link-color;
-  text-decoration: none;
-}
-
-:focus {
+.outline :focus {
   outline: $outline;
   outline-offset: -$outline-width;
 }
 
 ::selection {
   background: $selection-color;
+}
+
+.grid {
+  display: grid;
+  @include grid-columns(0.5rem, 1fr, 1rem);
+
+  @include desktop {
+    @include grid-columns(minmax(1rem, 1fr), minmax(2rem, 8rem), 2rem);
+  }
 }
 
 @media all and (display-mode: standalone) {
