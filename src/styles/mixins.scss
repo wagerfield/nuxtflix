@@ -16,3 +16,46 @@
       url("/fonts/#{$filename}.woff") format("woff");
   }
 }
+
+@mixin desktop {
+  @media only screen and (min-width: #{$desktop-breakpoint}) {
+    @content;
+  }
+}
+
+@mixin grid-columns($gutter, $column, $gap) {
+  grid-template-columns:
+    [bleed-start]
+    $gutter
+    [gutter-start]
+    $gutter
+    [column1-start third1-start half1-start content-start]
+    $column
+    [column1-end]
+    $gap
+    [column2-start]
+    $column
+    [column2-end third1-end]
+    $gap
+    [column3-start third2-start]
+    $column
+    [column3-end half1-end]
+    $gap / 2
+    [mid-line]
+    $gap / 2
+    [column4-start half2-start]
+    $column
+    [column4-end third2-end]
+    $gap
+    [column5-start third3-start]
+    $column
+    [column5-end]
+    $gap
+    [column6-start]
+    $column
+    [column6-end third3-end half2-end content-end]
+    $gutter
+    [gutter-end]
+    $gutter
+    [bleed-end];
+}
