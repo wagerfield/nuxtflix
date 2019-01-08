@@ -12,7 +12,7 @@ export default {
   // Server https://nuxtjs.org/api/configuration-server
   server: {
     host: "0.0.0.0",
-    port: 5000
+    port: "5000"
   },
   // Meta https://pwa.nuxtjs.org/modules/meta
   meta: {
@@ -69,7 +69,7 @@ export default {
     ssr: true
   }, {
     src: 'plugins/install',
-    ssr: false
+    ssr: true
   }, {
     src: 'plugins/offline',
     ssr: false

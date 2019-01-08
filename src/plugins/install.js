@@ -5,18 +5,20 @@ export default ({ store }, inject) => {
     if (installer) installer.prompt()
   })
 
-  // Before install prompt handler
-  window.addEventListener("beforeinstallprompt", (event) => {
-    event.preventDefault()
-    installer = event
-    installer.userChoice.then(({ outcome }) => {
-      console.log(`User ${outcome} prompt`)
+  if (process.client) {
+    // Before install prompt handler
+    window.addEventListener("beforeinstallprompt", (event) => {
+      event.preventDefault()
+      installer = event
+      installer.userChoice.then(({ outcome }) => {
+        console.log(`User ${outcome} prompt`)
+      })
+      store.commit("setInstall", true)
     })
-    store.commit("setInstall", true)
-  })
 
-  // App installed handler
-  window.addEventListener("appinstalled", (event) => {
-    store.commit("setInstall", false)
-  })
+    // App installed handler
+    window.addEventListener("appinstalled", (event) => {
+      store.commit("setInstall", false)
+    })
+  }
 }
