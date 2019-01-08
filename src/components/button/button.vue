@@ -1,5 +1,5 @@
 <template>
-  <component class="button" :is="tag"><slot /></component>
+  <component class="button" :is="tag" v-on="$listeners"><slot /></component>
 </template>
 
 <script>
@@ -17,6 +17,7 @@ export default {
 .button {
   border: none;
   cursor: pointer;
+  outline: none;
   position: relative;
   background: $white;
   box-shadow: 0 0 0 1px $black inset;
