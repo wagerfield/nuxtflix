@@ -1,5 +1,5 @@
 <template>
-  <component :is="component" />
+  <component :is="component" :width="size" :height="size" class="logo" />
 </template>
 
 <script>
@@ -23,6 +23,9 @@ export default {
   computed: {
     component() {
       return `v-logo-${this.theme}`
+    },
+    size() {
+      return this.scale * 16
     }
   },
   components: {
@@ -31,3 +34,9 @@ export default {
   }
 }
 </script>
+
+<style lang="scss">
+.logo {
+  display: block;
+}
+</style>
