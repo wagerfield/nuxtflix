@@ -60,6 +60,7 @@ export default {
   },
   // Modules https://nuxtjs.org/guide/modules
   modules: [
+    "nuxt-svg-loader",
     "@nuxtjs/style-resources",
     "@nuxtjs/pwa"
   ],
