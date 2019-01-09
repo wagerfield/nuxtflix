@@ -1,8 +1,6 @@
 <template>
   <header class="global-header mono">
-    <nuxt-link class="global-header-nav-link" to="/" exact>
-      <span>Nuxtflix</span>
-    </nuxt-link>
+    <nuxt-link class="global-header-logo-link" to="/"><v-logo /></nuxt-link>
     <nav class="global-header-nav">
       <ul class="global-header-nav-list">
         <li
