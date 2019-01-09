@@ -69,6 +69,9 @@ export default {
     src: 'plugins/components',
     ssr: true
   }, {
+    src: 'plugins/static',
+    ssr: true
+  }, {
     src: 'plugins/install',
     ssr: true
   }, {
