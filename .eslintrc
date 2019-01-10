@@ -1,0 +1,18 @@
+{
+  "root": true,
+  "extends": ["@nuxtjs"],
+  "parserOptions": {
+    "parser": "babel-eslint",
+    "sourceType": "module"
+  },
+  "env": {
+    "serviceworker": true
+  },
+  "globals": {
+    "workbox": false
+  },
+  "rules": {
+    "arrow-parens": ["error", "always"],
+    "quotes": ["error", "double"]
+  }
+}
