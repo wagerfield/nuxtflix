@@ -8,16 +8,6 @@ const expire1y = new workbox.expiration.Plugin({
   maxAgeSeconds: 60 * 60 * 24 * 365 // 1 year
 })
 
-// Scripts
-
-workbox.routing.registerRoute(
-  new RegExp(".+cdnjs.cloudflare.com.*"),
-  workbox.strategies.cacheFirst({
-    cacheName: "cdnjs-scripts",
-    plugins: [success, expire1y]
-  })
-)
-
 // Styles
 
 workbox.routing.registerRoute(
