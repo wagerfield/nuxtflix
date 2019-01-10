@@ -26,7 +26,7 @@ export default {
     [footer-end];
 }
 
-.global-header {
+.header {
   grid-column: bleed;
   grid-row: header;
   z-index: 3;
@@ -36,15 +36,19 @@ export default {
   }
 }
 
-.global-footer {
+.footer {
   grid-column: bleed;
   grid-row: footer;
   z-index: 2;
 }
 
 .content {
-  grid-column: content;
+  grid-column: bleed;
   grid-row: content;
   z-index: 1;
+
+  @include desktop {
+    grid-row-start: header-start;
+  }
 }
 </style>
