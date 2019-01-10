@@ -17,7 +17,7 @@ export default {
 .index-page {
   align-content: center;
   grid-row-gap: 2rem;
-  background: $green;
+  background: $blue;
   min-height: 100%;
 
   .title {
