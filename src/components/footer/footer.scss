@@ -56,7 +56,7 @@ $signature-breakpoint: 440px;
   }
 }
 
-.footer-nav.content-links {
+.footer-nav.sitemap-links {
   grid-column: half2;
 
   @include tablet {
@@ -68,7 +68,7 @@ $signature-breakpoint: 440px;
   }
 }
 
-.footer-nav.project-links {
+.footer-nav.internal-links {
   grid-column: half1;
 
   @include tablet {
@@ -101,11 +101,8 @@ $signature-breakpoint: 440px;
 }
 
 .footer-nav-item {
+  margin-top: 0.75rem;
   display: flex;
-}
-
-.footer-nav-item + .footer-nav-item {
-  margin-top: 0.5rem;
 }
 
 .footer-nav-link {

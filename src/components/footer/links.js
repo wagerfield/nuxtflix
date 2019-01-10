@@ -2,8 +2,8 @@ import { REPOSITORY, CONTENTFUL, NETLIFY, NUXT } from "~/core/links"
 
 export default () => [
   {
-    key: "content-links",
-    title: "Content",
+    key: "sitemap-links",
+    title: "Sitemap",
     links: [
       {
         key: "films",
@@ -18,8 +18,8 @@ export default () => [
     ]
   },
   {
-    key: "project-links",
-    title: "Project",
+    key: "internal-links",
+    title: "Internal",
     links: [
       {
         key: "typography",
