@@ -2,7 +2,7 @@
   <footer class="footer grid mono">
     <div class="footer-logo-wrapper">
       <nuxt-link class="footer-logo-link" to="/">
-        <v-logo />
+        <v-logo theme="light-mono" />
         <span class="footer-logo-text">Nuxtflix</span>
       </nuxt-link>
     </div>
