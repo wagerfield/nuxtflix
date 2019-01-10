@@ -1,11 +1,11 @@
-@include font-face("Playfair Display", "PlayfairDisplay-Black", 700);
+// @include font-face("Noway", "Noway-Medium", 700);
 
 * {
   -webkit-tap-highlight-color: $tap-color;
 }
 
 html {
-  font-size: 16px;
+  font-size: 18px;
   font-family: $body-font-fallback;
   line-height: 1.5;
 
@@ -22,7 +22,7 @@ html {
   }
 
   @include desktop {
-    font-size: 18px;
+    font-size: 20px;
   }
 }
 
@@ -33,7 +33,7 @@ h3,
 .h2,
 .h3 {
   font-family: $heading-font-fallback;
-  line-height: 1.1;
+  font-weight: 600;
   margin: 0;
 
   .wf-active & {
@@ -43,13 +43,14 @@ h3,
 
 h1,
 .h1 {
-  font-size: 3.5rem;
+  font-size: 3.2rem;
+  line-height: 1;
 }
 
 h2,
 .h2 {
   font-size: 2rem;
-  line-height: 1.15;
+  line-height: 1.1;
 }
 
 h3,
@@ -68,12 +69,21 @@ a {
 }
 
 .mono {
-  font-size: 0.875rem;
   font-family: $mono-font-fallback;
+  font-size: 0.85rem;
+  line-height: 1.6;
 
   .wf-active & {
     font-family: $mono-font-family;
   }
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.capitalize {
+  text-transform: capitalize;
 }
 
 ol,
@@ -85,7 +95,7 @@ ul {
 
 .outline :focus {
   outline: $outline;
-  outline-offset: -$outline-width;
+  outline-offset: $outline-offset;
 }
 
 ::selection {
