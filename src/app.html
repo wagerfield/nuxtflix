@@ -4,26 +4,10 @@
     {{
       HEAD
     }}
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/webfont/1.6.28/webfontloader.js"></script>
     <script>
       if (sessionStorage.fontsLoaded) {
         document.documentElement.classList.add("wf-active")
       }
-      WebFont.load({
-        custom: {
-          // https://github.com/typekit/fvd
-          // families: ["Noway:n7"]
-        },
-        google: {
-          families: ["Barlow:400", "Barlow Condensed:600", "Roboto Mono:400"]
-        },
-        active: function() {
-          sessionStorage.fontsLoaded = true
-        },
-        inactive: function() {
-          sessionStorage.fontsLoaded = false
-        }
-      })
     </script>
   </head>
   <body {{ BODY_ATTRS }}>
