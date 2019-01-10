@@ -2,7 +2,6 @@
   <g fill="none">
     <polygon fill="#4C92D9" points="2 8 8 8 14 14 8 14"/>
     <polygon fill="#FF5B4C" points="8 2 14 2 8 8 2 8"/>
-    <polygon fill="#FFFFFF" points="2 8 8 8 2 14"/>
-    <polygon fill="#E1E1E6" points="2 2 8 8 2 8"/>
+    <polygon fill="#FFF" points="2 2 8 8 2 14"/>
   </g>
 </svg>
