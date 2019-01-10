@@ -3,8 +3,6 @@ import hooks from "./nuxt.hooks"
 
 const LANG = "en"
 const NAME = "Nuxtflix"
-const THEME = "#17171A"
-const LOADING = "#FFFFFF"
 const DESCRIPTION = "Nuxt + Netlify + Contentful = Awesome"
 const KEYWORDS = ["nuxt", "netlify", "contentful"]
 
@@ -29,8 +27,8 @@ export default {
   manifest: {
     name: NAME,
     short_name: NAME,
-    theme_color: THEME, // Browser chrome colour
-    background_color: THEME, // Splash screen background colour
+    theme_color: "#17171A", // Browser chrome colour
+    background_color: "#FFFFFF", // Splash screen background colour
     description: DESCRIPTION
   },
   // Workbox https://pwa.nuxtjs.org/modules/workbox
@@ -56,7 +54,7 @@ export default {
   },
   // Loading https://nuxtjs.org/api/configuration-loading
   loading: {
-    color: LOADING
+    color: "#4c92d9" // Blue
   },
   // Modules https://nuxtjs.org/guide/modules
   modules: [
