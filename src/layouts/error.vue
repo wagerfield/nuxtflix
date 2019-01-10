@@ -46,10 +46,14 @@ export default {
 
   .message {
     margin-top: 2.5rem;
-    grid-column: column2 / column5;
+    grid-column: content;
     grid-row: 1 / 2;
     color: $white;
     z-index: 1;
+
+    @include desktop {
+      grid-column: column2 / column5;
+    }
   }
 }
 </style>
