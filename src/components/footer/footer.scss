@@ -29,10 +29,6 @@ $signature-breakpoint: 440px;
 .footer-signature {
   font-size: 0.75rem;
   color: $slate;
-
-  a {
-    color: $red;
-  }
 }
 
 .footer-copyright {
@@ -46,6 +42,10 @@ $signature-breakpoint: 440px;
 .footer-signature {
   grid-column: third2 / third3;
   display: none;
+
+  a {
+    color: $yellow;
+  }
 
   @include above($signature-breakpoint) {
     display: block;

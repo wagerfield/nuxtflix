@@ -31,17 +31,19 @@
       </ul>
     </nav>
     <span class="footer-copyright">Copyright 2019</span>
-    <span class="footer-signature">Made with love for King</span>
+    <span class="footer-signature"
+      >Made with love for <a :href="KING">King</a></span
+    >
   </footer>
 </template>
 
 <script>
-import { REPOSITORY } from "~/core/links"
+import { KING } from "~/core/links"
 import links from "./links"
 
 export default {
   static: {
-    REPOSITORY
+    KING
   },
   props: {
     groups: {
