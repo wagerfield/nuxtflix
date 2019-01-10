@@ -11,7 +11,7 @@ export default {
     },
     color: {
       type: String,
-      default: "#EEE"
+      default: "#e1e1e6"
     },
     width: {
       type: String,
