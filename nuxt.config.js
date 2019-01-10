@@ -65,6 +65,9 @@ export default {
   ],
   // Plugins https://nuxtjs.org/guide/plugins
   plugins: [{
+    src: "plugins/webfonts",
+    ssr: false
+  }, {
     src: "plugins/components",
     ssr: true
   }, {
