@@ -10,7 +10,7 @@ $mono-font-family: "Roboto Mono", $mono-font-fallback;
 $white: #ffffff;
 $smoke: #f3f3f5;
 $stone: #e1e1e6;
-$steel: #bababf;
+$steel: #adadb3;
 $slate: #49494d;
 $night: #303033;
 $black: #17171a;
@@ -24,7 +24,7 @@ $sage: #c6e5df;
 $text-color: $black;
 $link-color: $blue;
 $selection-color: $yellow;
-$tap-color: rgba($yellow, 0.5);
+$tap-color: rgba($blue, 0.5);
 
 $outline-width: 3px;
 $outline-offset: 3px;
@@ -32,7 +32,8 @@ $outline-style: solid;
 $outline-color: $yellow;
 $outline: $outline-color $outline-style $outline-width;
 
-$desktop-breakpoint: 720px;
+$mobile-breakpoint: 400px;
+$desktop-breakpoint: 780px;
 
 $min-width: 320px;
 $max-width: 1080px;
