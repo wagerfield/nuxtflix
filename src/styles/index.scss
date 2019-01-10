@@ -6,7 +6,7 @@
 
 html {
   font-size: 18px;
-  font-family: $body-font-fallback;
+  font-family: $body-font-family;
   line-height: 1.5;
 
   color: $text-color;
@@ -16,10 +16,6 @@ html {
   max-width: 100vw;
 
   overflow-x: hidden;
-
-  &.wf-active {
-    font-family: $body-font-family;
-  }
 
   @include desktop {
     font-size: 20px;
@@ -32,12 +28,8 @@ h3,
 .h1,
 .h2,
 .h3 {
-  font-family: $heading-font-fallback;
+  font-family: $heading-font-family;
   margin: 0;
-
-  .wf-active & {
-    font-family: $heading-font-family;
-  }
 }
 
 h1,
@@ -68,13 +60,9 @@ a {
 }
 
 .mono {
-  font-family: $mono-font-fallback;
+  font-family: $mono-font-family;
   font-size: 0.85rem;
   line-height: 1.6;
-
-  .wf-active & {
-    font-family: $mono-font-family;
-  }
 }
 
 .uppercase {
