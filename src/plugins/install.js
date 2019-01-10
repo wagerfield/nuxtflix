@@ -10,9 +10,9 @@ export default ({ store }, inject) => {
     window.addEventListener("beforeinstallprompt", (event) => {
       event.preventDefault()
       installer = event
-      installer.userChoice.then(({ outcome }) => {
-        console.log(`User ${outcome} prompt`)
-      })
+      // installer.userChoice.then(({ outcome }) => {
+      //   console.log(`User ${outcome} prompt`)
+      // })
       store.commit("setInstall", true)
     })
 

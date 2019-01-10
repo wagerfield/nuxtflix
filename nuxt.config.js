@@ -64,19 +64,19 @@ export default {
   ],
   // Plugins https://nuxtjs.org/guide/plugins
   plugins: [{
-    src: 'plugins/components',
+    src: "plugins/components",
     ssr: true
   }, {
-    src: 'plugins/static',
+    src: "plugins/static",
     ssr: true
   }, {
-    src: 'plugins/install',
+    src: "plugins/install",
     ssr: true
   }, {
-    src: 'plugins/offline',
+    src: "plugins/offline",
     ssr: false
   }, {
-    src: 'plugins/outline',
+    src: "plugins/outline",
     ssr: false
   }],
   // Styles https://nuxtjs.org/api/configuration-css
@@ -94,7 +94,7 @@ export default {
   // Messages https://git.io/fpy8U
   messages: {
     back_to_home: "Home",
-    error_404: "Page not found",
+    error_404: "Page not found"
   },
   // Build
   srcDir: "src",
