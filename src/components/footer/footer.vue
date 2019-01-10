@@ -1,80 +1,55 @@
 <template>
-  <footer class="global-footer grid mono">
-    <nav class="global-footer-nav">
-      <ul class="global-footer-nav-list">
-        <li
-          v-for="link in links"
-          :key="link.key"
-          class="global-footer-nav-item"
-        >
+  <footer class="footer grid mono">
+    <div class="footer-logo-wrapper">
+      <nuxt-link class="footer-logo-link" to="/">
+        <v-logo />
+        <span class="footer-logo-text">Nuxtflix</span>
+      </nuxt-link>
+    </div>
+    <nav
+      class="footer-nav"
+      v-for="group in groups"
+      :key="group.key"
+      :class="group.key"
+    >
+      <div class="footer-nav-title" v-text="group.title" />
+      <ul class="footer-nav-list">
+        <li v-for="link in group.links" :key="link.key" class="footer-nav-item">
           <nuxt-link
-            class="global-footer-nav-link"
+            v-if="link.path"
+            class="footer-nav-link"
             v-text="link.text"
             :to="link.path"
+          />
+          <a
+            v-else-if="link.href"
+            class="footer-nav-link"
+            v-text="link.text"
+            :href="link.href"
           />
         </li>
       </ul>
     </nav>
+    <span class="footer-copyright">Copyright 2019</span>
+    <span class="footer-signature">Made with love for King</span>
   </footer>
 </template>
 
 <script>
+import { REPOSITORY } from "~/core/links"
+import links from "./links"
+
 export default {
+  static: {
+    REPOSITORY
+  },
   props: {
-    links: {
+    groups: {
       type: Array,
-      default: () => [
-        {
-          key: "films",
-          path: "/films",
-          text: "Films"
-        },
-        {
-          key: "about",
-          path: "/about",
-          text: "About"
-        },
-        {
-          key: "contact",
-          path: "/contact",
-          text: "Contact"
-        },
-        {
-          key: "typography",
-          path: "/typography",
-          text: "Typography"
-        },
-        {
-          key: "palette",
-          path: "/palette",
-          text: "Palette"
-        },
-        {
-          key: "error",
-          path: "/error",
-          text: "Error"
-        }
-      ]
+      default: links
     }
   }
 }
 </script>
 
-<style lang="scss">
-.global-footer {
-  background-color: $black;
-  min-height: 200px;
-}
-
-.global-footer-nav {
-  grid-column: content;
-}
-
-.global-footer-nav-link {
-  padding: 0.5rem 0;
-  display: block;
-  line-height: 1;
-  font-size: 14px;
-  color: $white;
-}
-</style>
+<style lang="scss" src="./footer.scss" />

@@ -1,0 +1,111 @@
+$footer-link-color: $stone;
+$signature-breakpoint: 440px;
+
+.footer {
+  font-size: 0.8rem;
+  background-color: $black;
+  grid-row-gap: 2rem;
+  padding: 2rem 0;
+}
+
+.footer-logo-wrapper {
+  grid-column: half1;
+  height: 24px;
+}
+
+.footer-logo-link {
+  display: inline-flex;
+  align-items: center;
+  color: $footer-link-color;
+  margin: -4px;
+}
+
+.footer-logo-text {
+  padding: 0 0.6rem;
+}
+
+.footer-nav-title,
+.footer-copyright,
+.footer-signature {
+  font-size: 0.75rem;
+  color: $slate;
+
+  a {
+    color: $red;
+  }
+}
+
+.footer-copyright {
+  grid-column: content;
+
+  @include above($signature-breakpoint) {
+    grid-column: third1;
+  }
+}
+
+.footer-signature {
+  grid-column: third2 / third3;
+  display: none;
+
+  @include above($signature-breakpoint) {
+    display: block;
+  }
+
+  @include desktop {
+    grid-column: half2;
+  }
+}
+
+.footer-nav.content-links {
+  grid-column: half2;
+
+  @include tablet {
+    grid-column: third1;
+  }
+
+  @include desktop {
+    grid-column: column4;
+  }
+}
+
+.footer-nav.project-links {
+  grid-column: half1;
+
+  @include tablet {
+    grid-column: third2;
+  }
+
+  @include desktop {
+    grid-column: column5;
+  }
+}
+
+.footer-nav.external-links {
+  grid-column: half2;
+
+  @include tablet {
+    grid-column: third3;
+  }
+
+  @include desktop {
+    grid-column: column6;
+  }
+}
+
+.footer-nav-title {
+  margin-bottom: 1rem;
+}
+
+.footer-nav-item {
+  display: flex;
+}
+
+.footer-nav-item + .footer-nav-item {
+  margin-top: 0.5rem;
+}
+
+.footer-nav-link {
+  display: block;
+  line-height: 1;
+  color: $footer-link-color;
+}
