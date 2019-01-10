@@ -7,7 +7,8 @@
 ## Performance
 
 - [100/100 on Google Lighthouse][lighthouse]
-- [Optimal webfont performance][webfontperformance]
+- [Optimised webfont performance][webfontperformance]
+- [Optimised network requests and offline support with Workbox][workbox]
 - [Resource prefetching][prefetching]
 
 ## Author
@@ -18,6 +19,7 @@
 
 [MIT][mit]
 
+[workbox]: https://developers.google.com/web/tools/workbox
 [prefetching]: https://www.keycdn.com/support/prefetching
 [webfontperformance]: https://www.keycdn.com/blog/web-font-performance
 [webfontevents]: https://jonsuh.com/blog/font-loading-with-font-events
