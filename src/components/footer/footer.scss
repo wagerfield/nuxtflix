@@ -94,6 +94,10 @@ $signature-breakpoint: 440px;
 
 .footer-nav-title {
   margin-bottom: 1rem;
+
+  @include mobile {
+    margin-top: 0.1rem;
+  }
 }
 
 .footer-nav-item {
