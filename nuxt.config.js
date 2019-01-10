@@ -27,8 +27,8 @@ export default {
   manifest: {
     name: NAME,
     short_name: NAME,
-    theme_color: "#17171A", // Browser chrome colour
-    background_color: "#FFFFFF", // Splash screen background colour
+    theme_color: "#17171a", // Browser chrome colour
+    background_color: "#ffffff", // Splash screen background colour
     description: DESCRIPTION
   },
   // Workbox https://pwa.nuxtjs.org/modules/workbox
