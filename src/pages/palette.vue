@@ -27,6 +27,10 @@ export default {
         token: "stone"
       },
       {
+        hex: "#939399",
+        token: "steel"
+      },
+      {
         hex: "#49494D",
         token: "slate"
       },
@@ -51,12 +55,12 @@ export default {
         token: "green"
       },
       {
-        hex: "#4C92D9",
-        token: "blue"
-      },
-      {
         hex: "#C6E5DF",
         token: "sage"
+      },
+      {
+        hex: "#4C92D9",
+        token: "blue"
       }
     ]
   })
