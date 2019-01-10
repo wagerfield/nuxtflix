@@ -3,7 +3,7 @@
 export const WHITE = "#ffffff"
 export const SMOKE = "#f3f3f5"
 export const STONE = "#e1e1e6"
-export const STEEL = "#939399"
+export const STEEL = "#87878c"
 export const SLATE = "#49494d"
 export const NIGHT = "#303033"
 export const BLACK = "#17171a"
