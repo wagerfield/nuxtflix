@@ -3,8 +3,10 @@
 </template>
 
 <script>
+import VLogoLightMono from "~/assets/graphics/logo-light-mono.svg"
+import VLogoDarkMono from "~/assets/graphics/logo-dark-mono.svg"
 import VLogoLight from "~/assets/graphics/logo-light.svg"
-import VLogoDark from "~/assets/graphics/logo-light.svg"
+import VLogoDark from "~/assets/graphics/logo-dark.svg"
 
 export default {
   props: {
@@ -12,7 +14,7 @@ export default {
       type: String,
       default: "light",
       validate(value) {
-        return /^(light|dark)$/.test(value)
+        return /^(light|dark)(-mono)?$/.test(value)
       }
     },
     scale: {
@@ -29,6 +31,8 @@ export default {
     }
   },
   components: {
+    VLogoLightMono,
+    VLogoDarkMono,
     VLogoLight,
     VLogoDark
   }
