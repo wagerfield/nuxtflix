@@ -1,3 +1,4 @@
+import { WHITE, BLACK, BLUE } from "./src/core/palette"
 import generate from "./nuxt.generate"
 import hooks from "./nuxt.hooks"
 
@@ -27,8 +28,8 @@ export default {
   manifest: {
     name: NAME,
     short_name: NAME,
-    theme_color: "#17171a", // Browser chrome colour
-    background_color: "#ffffff", // Splash screen background colour
+    theme_color: BLACK, // Browser chrome colour
+    background_color: WHITE, // Splash screen background colour
     description: DESCRIPTION
   },
   // Workbox https://pwa.nuxtjs.org/modules/workbox
@@ -54,7 +55,7 @@ export default {
   },
   // Loading https://nuxtjs.org/api/configuration-loading
   loading: {
-    color: "#4c92d9" // Blue
+    color: BLUE
   },
   // Modules https://nuxtjs.org/guide/modules
   modules: [
