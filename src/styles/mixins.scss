@@ -4,7 +4,8 @@
   $weight: 400,
   $style: normal,
   $stretch: normal,
-  $display: swap
+  $display: swap,
+  $path: "/fonts/"
 ) {
   @font-face {
     font-family: $family;
@@ -12,13 +13,43 @@
     font-style: $style;
     font-stretch: $stretch;
     font-display: $display;
-    src: url("/fonts/#{$filename}.woff2") format("woff2"),
-      url("/fonts/#{$filename}.woff") format("woff");
+    src: url("#{$path}#{$filename}.woff2") format("woff2"),
+      url("#{$path}#{$filename}.woff") format("woff");
+  }
+}
+
+@mixin above($min-width) {
+  @media only screen and (min-width: #{$min-width}) {
+    @content;
+  }
+}
+
+@mixin below($max-width) {
+  @media only screen and (max-width: #{$max-width}) {
+    @content;
+  }
+}
+
+@mixin between($min-width, $max-width) {
+  @media only screen and (min-width: #{$min-width}) and (max-width: #{$max-width}) {
+    @content;
   }
 }
 
 @mixin desktop {
-  @media only screen and (min-width: #{$desktop-breakpoint}) {
+  @include above($desktop-breakpoint + 1) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @include above($mobile-breakpoint + 1) {
+    @content;
+  }
+}
+
+@mixin mobile {
+  @include below($mobile-breakpoint) {
     @content;
   }
 }
