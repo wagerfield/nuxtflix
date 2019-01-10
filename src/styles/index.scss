@@ -33,7 +33,6 @@ h3,
 .h2,
 .h3 {
   font-family: $heading-font-fallback;
-  font-weight: 600;
   margin: 0;
 
   .wf-active & {
@@ -44,7 +43,7 @@ h3,
 h1,
 .h1 {
   font-size: 3.2rem;
-  line-height: 1;
+  line-height: 0.9;
 }
 
 h2,
