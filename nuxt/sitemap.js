@@ -7,6 +7,6 @@ const mapRoutes = (routes) => routes.map(mapRoute)
 export default {
   gzip: true,
   generate: true,
-  // hostname: "https://nuxtflix.com",
+  hostname: process.env.BASE_URL,
   routes: () => routes().then(mapRoutes)
 }
