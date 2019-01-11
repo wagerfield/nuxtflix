@@ -1,6 +1,7 @@
 import { WHITE, BLACK, BLUE } from "./src/core/palette"
-import generate from "./nuxt.generate"
-import hooks from "./nuxt.hooks"
+import generate from "./nuxt/generate"
+import sitemap from "./nuxt/sitemap"
+import hooks from "./nuxt/hooks"
 
 const LANG = "en"
 const NAME = "Nuxtflix"
@@ -61,6 +62,7 @@ export default {
   modules: [
     "nuxt-svg-loader",
     "@nuxtjs/style-resources",
+    "@nuxtjs/sitemap",
     "@nuxtjs/pwa"
   ],
   // Plugins https://nuxtjs.org/guide/plugins
@@ -103,5 +105,6 @@ export default {
   // Build
   srcDir: "src",
   generate,
+  sitemap,
   hooks
 }
