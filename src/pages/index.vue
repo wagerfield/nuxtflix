@@ -1,6 +1,6 @@
 <template>
   <div class="index-page grid">
-    <h1 class="title uppercase">Welcome.</h1>
+    <h1 class="title uppercase">Yo!</h1>
     <v-button v-if="install" @click="$install">Install</v-button>
   </div>
 </template>
@@ -17,7 +17,7 @@ export default {
 .index-page {
   align-content: center;
   grid-row-gap: 2rem;
-  background: $blue;
+  background: $green;
   min-height: 100%;
 
   .title {
