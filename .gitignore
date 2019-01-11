@@ -6,5 +6,6 @@ dist
 *.DS_Store
 *.log
 
-sw.*
-sitemap.*
+sw.js
+sitemap.xml
+sitemap.xml.gz
