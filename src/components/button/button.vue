@@ -1,5 +1,7 @@
 <template>
-  <component class="button" :is="tag" v-on="$listeners"><slot /></component>
+  <component :is="tag" class="button mono uppercase" v-on="$listeners">
+    <div class="button-content"><slot /></div>
+  </component>
 </template>
 
 <script>
@@ -8,31 +10,44 @@ export default {
     tag: {
       type: String,
       default: "button"
+    },
+    theme: {
+      type: String,
+      default: "light",
+      validate(value) {
+        return /^(light|dark)$/.test(value)
+      }
     }
   }
 }
 </script>
 
 <style lang="scss">
+$button-border-radius: 0px;
+$button-offset-over: 3px;
+$button-offset-out: 7px;
+
 .button {
+  padding: 0;
   border: none;
   cursor: pointer;
-  outline: none;
-  position: relative;
-  background: $white;
-  box-shadow: 0 0 0 1px $black inset;
-  padding: 0.75em 1em;
-  z-index: 1;
+  background: $black;
+  border-radius: $button-border-radius;
 
-  // &:before {
-  //   z-index: 0;
-  //   content: "";
-  //   width: 100%;
-  //   height: 100%;
-  //   background: $black;
-  //   position: absolute;
-  //   left: 0;
-  //   top: 0;
-  // }
+  &:hover .button-content {
+    transform: translate3d($button-offset-over, -$button-offset-over, 0);
+  }
+}
+
+.button-content {
+  transition: transform 0.1s ease-out;
+  transform: translate3d($button-offset-out, -$button-offset-out, 0);
+  border-radius: $button-border-radius;
+  box-shadow: 0 0 0 2px $black inset;
+  background: $white;
+  padding: 1em 2em;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1;
 }
 </style>
