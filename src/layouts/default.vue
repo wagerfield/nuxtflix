@@ -17,9 +17,9 @@ export default {
 <style lang="scss">
 .layout {
   grid-template-rows:
-    [header-start]
+    [header-start content-start]
     $header-height
-    [header-end content-start]
+    [header-end]
     minmax(calc(100vh - #{$header-height}), auto)
     [footer-start content-end]
     auto
@@ -27,9 +27,8 @@ export default {
 }
 
 .header {
-  grid-column: bleed;
-  grid-row: header;
-  z-index: 3;
+  grid-area: header / bleed;
+  z-index: 2;
 
   @include desktop {
     grid-column: content;
@@ -37,18 +36,11 @@ export default {
 }
 
 .footer {
-  grid-column: bleed;
-  grid-row: footer;
-  z-index: 2;
+  grid-area: footer / bleed;
+  z-index: 1;
 }
 
 .content {
-  grid-column: bleed;
-  grid-row: content;
-  z-index: 1;
-
-  @include desktop {
-    grid-row-start: header-start;
-  }
+  grid-area: content / bleed;
 }
 </style>

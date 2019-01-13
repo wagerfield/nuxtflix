@@ -1,5 +1,5 @@
 <template>
-  <div class="error grid">
+  <div class="error-page grid">
     <span class="status h1" v-text="status" />
     <p class="message mono" v-text="error.message" />
   </div>
@@ -25,17 +25,28 @@ export default {
 </script>
 
 <style lang="scss">
-.error {
-  align-items: center;
+.error-page {
+  $row-gap: 2rem;
+  grid-template-rows:
+    [bleed-start header-start]
+    $header-height
+    [header-end]
+    minmax($row-gap, 1fr)
+    [error-start]
+    auto
+    [error-end]
+    minmax($row-gap, 1fr)
+    [bleed-end];
   text-align: center;
   background: $black;
   min-height: 100%;
 
   .status {
+    line-height: 1;
     font-size: 12rem;
     user-select: none;
-    grid-column: content;
-    grid-row: 1 / 2;
+    margin-bottom: 1rem;
+    grid-area: error / content;
     color: $night;
     opacity: 0.5;
 
@@ -45,14 +56,13 @@ export default {
   }
 
   .message {
-    margin-top: 2.5rem;
-    grid-column: content;
-    grid-row: 1 / 2;
+    grid-area: error / content;
+    align-self: center;
     color: $white;
     z-index: 1;
 
     @include desktop {
-      grid-column: column2 / column5;
+      grid-column: column-2 / column-5;
     }
   }
 }

@@ -20,6 +20,7 @@ $yellow: #ffd659;
 $green: #45e6b0;
 $sage: #c6e5df;
 $blue: #4c92d9;
+$purple: #855dd6;
 
 $text-color: $black;
 $link-color: $blue;
@@ -35,7 +36,5 @@ $outline: $outline-color $outline-style $outline-width;
 $mobile-breakpoint: 400px;
 $desktop-breakpoint: 780px;
 
-$min-width: 320px;
-$max-width: 1080px;
-
-$header-height: 3.5rem;
+$logo-size: 24px;
+$header-height: calc(2rem + #{$logo-size});
