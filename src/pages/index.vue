@@ -33,7 +33,9 @@ export default {
     [callout-end]
     minmax($row-gap, 0.5fr)
     [bleed-end];
-  background: $stone url("~assets/images/interstellar.jpg") center;
+  background: $stone center;
+  background-image: url("~assets/images/interstellar.jpg");
+  background-image: url("~assets/images/interstellar.webp");
   background-size: cover;
   min-height: 100%;
 
