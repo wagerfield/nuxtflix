@@ -2,7 +2,7 @@ $header-link-color: $white;
 
 .header {
   display: flex;
-  font-size: 0.8rem;
+  font-size: 14px;
   align-items: center;
   justify-content: space-between;
   background-color: $black;
@@ -27,15 +27,15 @@ $header-link-color: $white;
 
 .header-nav-list {
   display: flex;
-  margin-right: -0.2rem;
+  margin-right: -2px;
 }
 
 .header-nav-item + .header-nav-item {
-  margin-left: 0.5rem;
+  margin-left: 12px;
 }
 
 .header-nav-link {
-  padding: 0.5rem;
+  padding: 7px;
   display: block;
   line-height: 1;
   color: $header-link-color;

@@ -1,15 +1,15 @@
-$footer-link-color: $white;
+$footer-link-color: $stone;
 $signature-breakpoint: 440px;
 
 .footer {
-  font-size: 0.8rem;
+  font-size: 14px;
   background-color: $black;
-  padding: 2rem 0 1rem;
   grid-row-gap: 2rem;
+  padding: 2rem 0 1rem;
 }
 
 .footer-logo-wrapper {
-  grid-column: half1;
+  grid-column: half-1;
   height: 24px;
 }
 
@@ -27,7 +27,7 @@ $signature-breakpoint: 440px;
 .footer-nav-title,
 .footer-copyright,
 .footer-signature {
-  font-size: 0.75rem;
+  font-size: 13px;
   color: $steel;
 }
 
@@ -35,12 +35,12 @@ $signature-breakpoint: 440px;
   grid-column: content;
 
   @include above($signature-breakpoint) {
-    grid-column: third1;
+    grid-column: third-1;
   }
 }
 
 .footer-signature {
-  grid-column: third2 / third3;
+  grid-column: third-2 / third-3;
   display: none;
 
   a {
@@ -52,43 +52,43 @@ $signature-breakpoint: 440px;
   }
 
   @include desktop {
-    grid-column: half2;
+    grid-column: half-2;
   }
 }
 
 .footer-nav.sitemap-links {
-  grid-column: half2;
+  grid-column: half-2;
 
   @include tablet {
-    grid-column: third1;
+    grid-column: third-1;
   }
 
   @include desktop {
-    grid-column: column4;
+    grid-column: column-4;
   }
 }
 
 .footer-nav.internal-links {
-  grid-column: half1;
+  grid-column: half-1;
 
   @include tablet {
-    grid-column: third2;
+    grid-column: third-2;
   }
 
   @include desktop {
-    grid-column: column5;
+    grid-column: column-5;
   }
 }
 
 .footer-nav.external-links {
-  grid-column: half2;
+  grid-column: half-2;
 
   @include tablet {
-    grid-column: third3;
+    grid-column: third-3;
   }
 
   @include desktop {
-    grid-column: column6;
+    grid-column: column-6;
   }
 }
 
