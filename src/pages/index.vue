@@ -41,9 +41,13 @@ export default {
 
   .title {
     grid-area: title / content;
-    font-size: 5rem;
+    font-size: 4rem;
     max-width: 20ch;
     color: $white;
+
+    @include desktop {
+      font-size: 5rem;
+    }
   }
 
   .callout {
