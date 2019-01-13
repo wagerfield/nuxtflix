@@ -1,7 +1,10 @@
 <template>
   <div class="index-page grid">
-    <h1 class="title uppercase">Hello.</h1>
-    <v-button v-if="install" @click="$install">Install</v-button>
+    <h1 class="title uppercase">The end of Earth will not be the end of us.</h1>
+    <v-button class="callout" v-if="install" @click="$install"
+      >Install</v-button
+    >
+    <!-- <v-button class="callout" @click="$install">Install App</v-button> -->
   </div>
 </template>
 
@@ -15,19 +18,35 @@ export default {
 
 <style lang="scss">
 .index-page {
-  align-content: center;
-  grid-row-gap: 2rem;
-  background: $yellow;
+  $row-gap: 2rem;
+  grid-template-rows:
+    [bleed-start header-start]
+    $header-height
+    [header-end]
+    minmax($row-gap, 1fr)
+    [title-start]
+    auto
+    [title-end]
+    $row-gap
+    [callout-start]
+    auto
+    [callout-end]
+    minmax($row-gap, 0.5fr)
+    [bleed-end];
+  background: $stone url("~assets/images/interstellar.jpg") center;
+  background-size: cover;
   min-height: 100%;
 
   .title {
-    grid-column: content;
-    text-align: center;
-    font-size: 6rem;
+    grid-area: title / content;
+    font-size: 5rem;
+    max-width: 20ch;
+    color: $white;
   }
 
-  .install {
-    grid-column: third2;
+  .callout {
+    grid-area: callout / content;
+    justify-self: start;
   }
 }
 </style>
