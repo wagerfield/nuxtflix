@@ -9,6 +9,12 @@ import VLogoLight from "~/assets/graphics/logo-light.svg"
 import VLogoDark from "~/assets/graphics/logo-dark.svg"
 
 export default {
+  components: {
+    VLogoLightMono,
+    VLogoDarkMono,
+    VLogoLight,
+    VLogoDark
+  },
   props: {
     theme: {
       type: String,
@@ -29,12 +35,6 @@ export default {
     size() {
       return this.scale * 16
     }
-  },
-  components: {
-    VLogoLightMono,
-    VLogoDarkMono,
-    VLogoLight,
-    VLogoDark
   }
 }
 </script>

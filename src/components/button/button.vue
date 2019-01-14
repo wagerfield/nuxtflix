@@ -1,6 +1,6 @@
 <template>
-  <component :is="tag" class="button mono uppercase" v-on="$listeners">
-    <div class="button-content"><slot /></div>
+  <component :is="tag" class="button" v-on="$listeners">
+    <div class="button-content mono uppercase" v-text="text" />
   </component>
 </template>
 
@@ -10,6 +10,10 @@ export default {
     tag: {
       type: String,
       default: "button"
+    },
+    text: {
+      type: String,
+      default: "Button"
     },
     theme: {
       type: String,
