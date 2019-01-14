@@ -6,7 +6,7 @@
     </nuxt-link>
     <nav class="header-nav">
       <ul class="header-nav-list">
-        <li class="header-nav-item" v-for="link in links" :key="link.key">
+        <li v-for="link in links" :key="link.key" class="header-nav-item">
           <nuxt-link class="header-nav-link" :to="link.path">
             <span v-text="link.text" />
           </nuxt-link>

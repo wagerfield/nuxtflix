@@ -3,6 +3,7 @@ $signature-breakpoint: 440px;
 
 .footer {
   font-size: 14px;
+  line-height: 1;
   background-color: $black;
   grid-row-gap: 2rem;
   padding: 2rem 0 1rem;
@@ -44,6 +45,7 @@ $signature-breakpoint: 440px;
   display: none;
 
   a {
+    display: inline-block;
     color: $yellow;
   }
 
@@ -93,20 +95,14 @@ $signature-breakpoint: 440px;
 }
 
 .footer-nav-title {
-  margin-bottom: 1rem;
-
-  @include mobile {
-    margin-top: 0.1rem;
-  }
+  margin: 6px 0 1rem;
 }
 
 .footer-nav-item {
   margin-top: 0.75rem;
-  display: flex;
 }
 
 .footer-nav-link {
-  display: block;
-  line-height: 1;
+  display: inline-block;
   color: $footer-link-color;
 }

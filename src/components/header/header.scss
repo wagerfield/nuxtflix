@@ -27,7 +27,7 @@ $header-link-color: $white;
 
 .header-nav-list {
   display: flex;
-  margin-right: -2px;
+  margin-right: -1px;
 }
 
 .header-nav-item + .header-nav-item {
@@ -35,7 +35,7 @@ $header-link-color: $white;
 }
 
 .header-nav-link {
-  padding: 7px;
+  padding: 6px;
   display: block;
   line-height: 1;
   color: $header-link-color;

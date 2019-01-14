@@ -7,9 +7,9 @@
       </nuxt-link>
     </div>
     <nav
-      class="footer-nav"
       v-for="group in groups"
       :key="group.key"
+      class="footer-nav"
       :class="group.key"
     >
       <div class="footer-nav-title" v-text="group.title" />
@@ -18,14 +18,14 @@
           <nuxt-link
             v-if="link.path"
             class="footer-nav-link"
-            v-text="link.text"
             :to="link.path"
+            v-text="link.text"
           />
           <a
             v-else-if="link.href"
             class="footer-nav-link"
-            v-text="link.text"
             :href="link.href"
+            v-text="link.text"
           />
         </li>
       </ul>
