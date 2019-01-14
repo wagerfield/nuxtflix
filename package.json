@@ -20,12 +20,12 @@
     "build": "nuxt build --modern=server",
     "generate": "nuxt generate --modern=client",
     "format": "prettier-eslint --write '*.{js,md}' 'src/**/*.{js,json,scss,vue}'",
-    "lint": "eslint . --ext .js,.vue"
+    "lint": "eslint . --ext .js,.vue --fix"
   },
   "lint-staged": {
     "src/**/*.{html,js,json,scss,vue}": [
       "prettier-eslint --write",
-      "eslint --ext .js,.vue",
+      "eslint",
       "git add"
     ],
     "*.{js,md}": [
