@@ -1,10 +1,8 @@
 <template>
   <div class="index-page grid">
     <h1 class="title uppercase">The end of Earth will not be the end of us.</h1>
-    <v-button class="callout" v-if="install" @click="$install"
-      >Install</v-button
-    >
-    <!-- <v-button class="callout" @click="$install">Install App</v-button> -->
+    <v-button v-if="install" class="callout" text="Install" @click="$install" />
+    <!-- <v-button class="callout" text="Install" @click="$install" /> -->
   </div>
 </template>
 

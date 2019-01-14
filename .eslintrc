@@ -1,18 +1,30 @@
 {
   "root": true,
-  "extends": ["@nuxtjs"],
+  "extends": [
+    "standard",
+    "plugin:import/errors",
+    "plugin:import/warnings",
+    "plugin:jest/recommended",
+    "plugin:vue/recommended",
+    "@vue/prettier"
+  ],
   "parserOptions": {
     "parser": "babel-eslint",
     "sourceType": "module"
   },
   "env": {
-    "serviceworker": true
+    "serviceworker": true,
+    "browser": true,
+    "jest": true
   },
   "globals": {
     "workbox": false
   },
-  "rules": {
-    "arrow-parens": ["error", "always"],
-    "quotes": ["error", "double"]
+  "settings": {
+    "import/resolver": {
+      "nuxt": {
+        "nuxtSrcDir": "src"
+      }
+    }
   }
 }

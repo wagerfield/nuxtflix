@@ -12,7 +12,7 @@
 - [Optimised webfont performance][webfontperformance]
 - [Optimised network requests and offline support with Workbox][workbox]
 - [Sitemap generation for search engine crawling][sitemap]
-- [Served over HTTP2 with Netlify][netlify]
+- [Statically generated pages served over HTTP2 with Netlify][netlify]
 - [Resource prefetching][prefetching]
 
 ### Accessibility
