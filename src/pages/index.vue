@@ -14,7 +14,7 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .index-page {
   $row-gap: 2rem;
   grid-template-rows:
@@ -31,7 +31,7 @@ export default {
     [callout-end]
     minmax($row-gap, 0.5fr)
     [bleed-end];
-  background: $stone center;
+  background: $stone center 10%;
   background-image: url("~assets/images/interstellar.jpg");
   background-image: url("~assets/images/interstellar.webp");
   background-size: cover;
