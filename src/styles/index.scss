@@ -34,7 +34,7 @@ h3,
 .h2,
 .h3 {
   font-family: $heading-font-fallback;
-  margin: 0;
+  margin: 1rem 0;
 
   .wf-active & {
     font-family: $heading-font-family;
