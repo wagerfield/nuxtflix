@@ -1,12 +1,13 @@
+$footer-signature-breakpoint: 440px;
 $footer-link-color: $stone;
-$signature-breakpoint: 440px;
+$footer-row-gap: 2rem;
 
 .footer {
   font-size: 14px;
   line-height: 1;
   background-color: $black;
-  grid-row-gap: 2rem;
-  padding: 2rem 0 1rem;
+  grid-row-gap: $footer-row-gap;
+  padding: $footer-row-gap 0;
 }
 
 .footer-logo-wrapper {
@@ -35,7 +36,7 @@ $signature-breakpoint: 440px;
 .footer-copyright {
   grid-column: content;
 
-  @include above($signature-breakpoint) {
+  @include above($footer-signature-breakpoint) {
     grid-column: third-1;
   }
 }
@@ -49,7 +50,7 @@ $signature-breakpoint: 440px;
     color: $yellow;
   }
 
-  @include above($signature-breakpoint) {
+  @include above($footer-signature-breakpoint) {
     display: block;
   }
 

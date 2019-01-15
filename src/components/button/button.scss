@@ -1,0 +1,97 @@
+$button-font-size: 14px;
+$button-height: 42px;
+$button-offset: 7px;
+$button-hover: 4px;
+
+@mixin button-border($color, $width) {
+  box-shadow: 0 0 0 $width $color inset;
+}
+
+.button {
+  @include button-border($black, 2px);
+  height: $button-height;
+  position: relative;
+  background: $white;
+  user-select: none;
+  overflow: hidden;
+  display: block;
+  cursor: pointer;
+  border: none;
+  padding: 0;
+
+  .button-text {
+    @include button-border($black, 2px);
+    height: $button-height;
+    font-size: $button-font-size;
+    font-weight: 700;
+    line-height: $button-height;
+    letter-spacing: 0.5px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    background: $white;
+    padding: 0 2em;
+    transition: transform 0.1s ease-out;
+  }
+
+  @include after {
+    @include fill;
+    @include button-border($black, 2px);
+  }
+
+  @include hover(".button-text") {
+    @include move(-$button-hover, $button-hover);
+  }
+
+  &.button-fill .button-text {
+    font-weight: 400;
+    background: $black;
+    color: $white;
+  }
+
+  &.button-elevate {
+    margin: $button-offset $button-offset 0 0;
+    overflow: visible;
+
+    .button-text {
+      transform: translate($button-offset, -$button-offset);
+      transform: translate3d($button-offset, -$button-offset, 0);
+    }
+
+    @include after {
+      content: none;
+    }
+
+    @include hover(".button-text") {
+      @include move($button-hover, -$button-hover);
+    }
+  }
+
+  &.button-dark {
+    @include button-border($white, 1px);
+    background: $black;
+
+    .button-text {
+      @include button-border($white, 1px);
+      background: $black;
+      font-weight: 400;
+      color: $white;
+    }
+
+    @include after {
+      @include button-border($white, 1px);
+    }
+
+    &.button-fill .button-text {
+      background: $white;
+      font-weight: 700;
+      color: $black;
+    }
+
+    &.button-elevate {
+      @include after {
+        content: none;
+      }
+    }
+  }
+}

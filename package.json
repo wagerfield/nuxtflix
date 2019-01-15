@@ -23,13 +23,17 @@
     "lint": "eslint . --ext .js,.vue --fix"
   },
   "lint-staged": {
-    "src/**/*.{html,js,json,scss,vue}": [
+    "src/**/*.{js,vue}": [
       "prettier-eslint --write",
       "eslint",
       "git add"
     ],
+    "src/**/*.{html,json,scss}": [
+      "prettier --write",
+      "git add"
+    ],
     "*.{md}": [
-      "prettier-eslint --write",
+      "prettier --write",
       "git add"
     ]
   },
@@ -63,6 +67,7 @@
     "lint-staged": "^8.1.0",
     "node-sass": "^4.11.0",
     "nuxt-svg-loader": "^1.0.1",
+    "prettier": "^1.15.3",
     "prettier-eslint-cli": "^4.7.1",
     "sass-loader": "^7.1.0",
     "serve": "^10.1.1"
