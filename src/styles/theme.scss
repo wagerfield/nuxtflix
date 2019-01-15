@@ -25,9 +25,9 @@ $purple: #855dd6;
 $text-color: $black;
 $link-color: $blue;
 $selection-color: $yellow;
-$tap-color: rgba($blue, 0.5);
+$tap-color: transparent;
 
-$outline-width: 2px;
+$outline-width: 3px;
 $outline-offset: 3px;
 $outline-style: solid;
 $outline-color: $yellow;
@@ -35,6 +35,7 @@ $outline: $outline-color $outline-style $outline-width;
 
 $mobile-breakpoint: 400px;
 $desktop-breakpoint: 780px;
+$cinema-breakpoint: 1080px;
 
 $logo-size: 24px;
 $header-height: calc(2rem + #{$logo-size});
