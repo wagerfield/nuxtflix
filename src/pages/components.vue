@@ -1,6 +1,6 @@
 <template>
   <div class="components-page grid">
-    <h1 class="uppercase">Components</h1>
+    <h1 class="uppercase" data-postfix="in the dark.">Components</h1>
     <h2 class="uppercase">Buttons</h2>
     <div class="wrapper light">
       <v-button text="Light Regular" />
@@ -75,7 +75,7 @@ h2 {
     grid-column: half-1;
     text-align: right;
     &:after {
-      content: "In The Dark";
+      content: attr(data-postfix);
       position: absolute;
       margin-left: 2rem;
       text-align: left;
