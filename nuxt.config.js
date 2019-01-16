@@ -2,6 +2,7 @@ import { WHITE, BLACK, BLUE } from "./src/core/palette"
 import generate from "./nuxt/generate"
 import sitemap from "./nuxt/sitemap"
 import hooks from "./nuxt/hooks"
+import env from "./nuxt/env"
 
 const LANG = "en"
 const NAME = "Nuxtflix"
@@ -73,6 +74,9 @@ export default {
     src: "plugins/components",
     ssr: true
   }, {
+    src: "plugins/cms",
+    ssr: true
+  }, {
     src: "plugins/static",
     ssr: true
   }, {
@@ -106,5 +110,6 @@ export default {
   srcDir: "src",
   generate,
   sitemap,
-  hooks
+  hooks,
+  env
 }
