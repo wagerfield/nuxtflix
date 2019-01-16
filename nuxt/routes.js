@@ -1,9 +1,11 @@
-import { FILMS } from "../src/core/constants"
+import create from "../src/cms/contentful"
+import env from "./env"
 
-export default () =>
-  Promise.resolve(
-    FILMS.map((film) => ({
-      route: `/film/${film}`,
-      payload: film
-    }))
-  )
+export default async () => {
+  const cms = create(env)
+  const films = await cms.getFilms()
+  return films.map((film) => ({
+    route: `/film/${film.fields.slug}`,
+    payload: film
+  }))
+}
