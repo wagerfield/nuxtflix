@@ -22,6 +22,9 @@ export default {
   getters: {
     filmSlugs({ films }) {
       return films && films.map((film) => film.fields.slug)
+    },
+    filmBySlug({ films }) {
+      return (slug) => films && films.find((film) => film.fields.slug === slug)
     }
   },
   actions: {
