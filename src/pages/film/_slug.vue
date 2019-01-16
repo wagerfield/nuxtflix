@@ -1,10 +1,8 @@
 <template>
-  <h1 v-text="title" />
+  <h1 v-text="film.fields.title" />
 </template>
 
 <script>
-import { capital } from "case"
-
 export default {
   async validate({ params, store, payload }) {
     if (payload) {
@@ -16,8 +14,11 @@ export default {
     }
   },
   computed: {
-    title() {
-      return capital(this.$route.params.slug)
+    slug() {
+      return this.$route.params.slug
+    },
+    film() {
+      return this.$store.getters.filmBySlug(this.slug)
     }
   }
 }
