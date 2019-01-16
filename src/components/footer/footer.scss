@@ -1,4 +1,5 @@
 $footer-signature-breakpoint: 440px;
+$footer-link-active-color: $yellow;
 $footer-link-color: $stone;
 $footer-row-gap: 2rem;
 
@@ -106,4 +107,13 @@ $footer-row-gap: 2rem;
 .footer-nav-link {
   display: inline-block;
   color: $footer-link-color;
+  transition: color 0.2s ease-out;
+
+  &.link-active {
+    color: $footer-link-active-color;
+  }
+
+  @include hover {
+    color: $footer-link-active-color;
+  }
 }
