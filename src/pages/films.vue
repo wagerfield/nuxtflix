@@ -2,25 +2,24 @@
   <div>
     <h1>Films</h1>
     <ul>
-      <li v-for="film in films" :key="film.key">
-        <nuxt-link :to="film.path" v-text="film.text" />
+      <li v-for="film in films" :key="film.fields.id">
+        <nuxt-link :to="getPath(film)" v-text="film.fields.title" />
       </li>
     </ul>
   </div>
 </template>
 
 <script>
-import { capital } from "case"
-import { FILMS } from "~/core/constants"
+import { mapState } from "vuex"
 
 export default {
-  data() {
-    return {
-      films: FILMS.map((film) => ({
-        text: capital(film),
-        path: `/film/${film}`,
-        key: film
-      }))
+  async fetch({ store }) {
+    await store.dispatch("getFilms")
+  },
+  computed: mapState(["films"]),
+  methods: {
+    getPath(film) {
+      return `/film/${film.fields.slug}`
     }
   }
 }

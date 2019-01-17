@@ -2,7 +2,8 @@ export default {
   state: () => ({
     install: false,
     offline: false,
-    outline: false
+    outline: false,
+    films: null
   }),
   mutations: {
     setInstall(state, install) {
@@ -13,6 +14,24 @@ export default {
     },
     setOutline(state, outline) {
       state.outline = outline
+    },
+    setFilms(state, films) {
+      state.films = films
+    }
+  },
+  getters: {
+    filmSlugs({ films }) {
+      return films && films.map((film) => film.fields.slug)
+    },
+    filmBySlug({ films }) {
+      return (slug) => films && films.find((film) => film.fields.slug === slug)
+    }
+  },
+  actions: {
+    async getFilms({ state, commit }) {
+      if (!state.films) {
+        commit("setFilms", await this.$cms.getFilms())
+      }
     }
   }
 }
