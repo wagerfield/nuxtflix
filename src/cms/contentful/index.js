@@ -1,5 +1,5 @@
 import { createClient } from "contentful"
-import { mapEntries, queryType } from "./utils"
+import { mapEntry, mapEntries, queryType } from "./utils"
 
 export default (env) => {
   // Client
@@ -9,11 +9,18 @@ export default (env) => {
     environment: env.CONTENTFUL_ENVIRONMENT,
     accessToken: env.CONTENTFUL_ACCESS_TOKEN
   })
+
   // API
   return {
     async getFilms() {
-      const entries = await client.getEntries(queryType("film"))
+      const query = queryType("film")
+      const entries = await client.getEntries(query)
       return mapEntries(entries.items)
+    },
+    async getFilmBySlug(slug) {
+      const query = queryType("film", { "fields.slug": slug })
+      const entries = await client.getEntries(query)
+      return mapEntry(entries.items[0])
     }
   }
 }
