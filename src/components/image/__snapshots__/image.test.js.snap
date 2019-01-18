@@ -2,7 +2,7 @@
 
 exports[`render optional props 1`] = `
 <picture
-  class="picture"
+  class="image"
 >
   <source
     srcset="/image.jpg?fm=webp&q=50&w=200&f=faces&fl=progressive"
@@ -22,7 +22,7 @@ exports[`render optional props 1`] = `
 
 exports[`render required props 1`] = `
 <picture
-  class="picture"
+  class="image"
 >
   <source
     srcset="/image.jpg?fm=webp"

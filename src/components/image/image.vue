@@ -1,5 +1,5 @@
 <template>
-  <picture class="picture">
+  <picture class="image">
     <source
       v-for="source in sources"
       :key="source.type"
@@ -122,9 +122,10 @@ export default {
 </script>
 
 <style lang="scss">
-.picture {
+.image {
   img,
   source {
+    display: block;
     width: 100%;
   }
 }
