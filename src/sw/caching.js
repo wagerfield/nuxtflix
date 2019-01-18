@@ -43,14 +43,14 @@ workbox.routing.registerRoute(
 
 workbox.routing.registerRoute(
   new RegExp(".+cdn.contentful.com.*"),
-  workbox.strategies.networkFirst({
+  workbox.strategies.staleWhileRevalidate({
     cacheName: "contentful-cdn"
   })
 )
 
 workbox.routing.registerRoute(
   new RegExp(".+preview.contentful.com.*"),
-  workbox.strategies.networkFirst({
+  workbox.strategies.staleWhileRevalidate({
     cacheName: "contentful-preview"
   })
 )
