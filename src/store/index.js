@@ -1,4 +1,4 @@
-import { find, map, prop, propEq } from "ramda"
+import { prop, propEq } from "ramda"
 
 export default {
   state: () => ({
@@ -23,10 +23,10 @@ export default {
   },
   getters: {
     filmSlugs({ films }) {
-      return map(prop("slug"), films)
+      return films && films.map(prop("slug"))
     },
     filmBySlug({ films }) {
-      return (slug) => find(propEq("slug", slug), films)
+      return (slug) => films && films.find(propEq("slug", slug))
     }
   },
   actions: {
