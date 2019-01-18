@@ -45,8 +45,8 @@ export default {
     line-height: 1;
     font-size: 12rem;
     user-select: none;
-    margin-bottom: 1rem;
     grid-area: error / content;
+    margin: 0 0 1rem;
     color: $night;
     opacity: 0.5;
 

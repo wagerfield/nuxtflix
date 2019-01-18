@@ -105,15 +105,39 @@ $footer-row-gap: 2rem;
 }
 
 .footer-nav-link {
+  position: relative;
   display: inline-block;
   color: $footer-link-color;
   transition: color 0.2s ease-out;
 
+  &:before {
+    content: "";
+    display: block;
+    border: 5px solid $footer-link-color;
+    border-bottom-color: transparent;
+    border-right-color: transparent;
+    border-top-color: transparent;
+    position: absolute;
+    left: -10px;
+    top: 2px;
+    opacity: 0;
+    transition: all 0.2s $easeOutQuad;
+    @include move(-8px);
+  }
+
   &.link-active {
-    color: $footer-link-active-color;
+    pointer-events: none;
+
+    &:before {
+      @include move;
+      opacity: 1;
+    }
   }
 
   @include hover {
-    color: $footer-link-active-color;
+    &:before {
+      @include move;
+      opacity: 1;
+    }
   }
 }

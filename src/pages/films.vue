@@ -1,26 +1,67 @@
 <template>
-  <div>
-    <h1>Films</h1>
-    <ul>
-      <li v-for="film in films" :key="film.fields.id">
-        <nuxt-link :to="getPath(film)" v-text="film.fields.title" />
+  <div class="films-page grid">
+    <h1 class="uppercase title">Films</h1>
+    <ul class="films-list">
+      <li v-for="film in films" :key="film.id">
+        <nuxt-link :to="getPath(film)">
+          <v-film-cover :film="film" />
+        </nuxt-link>
       </li>
     </ul>
   </div>
 </template>
 
 <script>
-import { mapState } from "vuex"
-
 export default {
-  async fetch({ store }) {
-    await store.dispatch("getFilms")
+  async asyncData({ app, payload }) {
+    const films = payload || (await app.$cms.getFilms())
+    return { films }
   },
-  computed: mapState(["films"]),
   methods: {
     getPath(film) {
-      return `/film/${film.fields.slug}`
+      return `/film/${film.slug}`
     }
   }
 }
 </script>
+
+<style lang="scss" scoped>
+.films-page {
+  padding-top: $header-height;
+  align-content: flex-start;
+  background: $black;
+  min-height: 100%;
+}
+
+.title {
+  grid-column: content;
+  margin-bottom: 1.4rem;
+  text-indent: -2px;
+  font-size: 4rem;
+  color: $white;
+  &:after {
+    content: ":";
+  }
+}
+
+.films-list {
+  margin-top: 1rem;
+  grid-column: content;
+
+  display: grid;
+  grid-gap: 1rem;
+  align-content: flex-start;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+}
+
+@include desktop {
+  .title {
+    grid-column: gutter;
+  }
+
+  .films-list {
+    grid-column: gutter;
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  }
+}
+</style>

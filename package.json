@@ -12,20 +12,24 @@
     "url": "https://github.com/wagerfield/nuxtflix/issues"
   },
   "scripts": {
+    "reset": "rimraf dist .nuxt",
     "dev": "nuxt",
+    "build": "nuxt build --modern=server",
+    "start": "nuxt start --modern=server",
+    "generate": "nuxt generate --modern=client",
     "serve": "serve dist",
     "analyse": "nuxt build --analyze",
     "analyze": "nuxt build --analyze",
-    "start": "nuxt start --modern=server",
-    "build": "nuxt build --modern=server",
-    "generate": "nuxt generate --modern=client",
     "format": "prettier-eslint --write '*.{js,md}' 'src/**/*.{js,json,scss,vue}'",
-    "lint": "eslint . --ext .js,.vue --fix"
+    "lint": "eslint . --ext .js,.vue --fix",
+    "test-watch": "jest --watch",
+    "test": "jest"
   },
   "lint-staged": {
     "src/**/*.{js,vue}": [
       "prettier-eslint --write",
       "eslint",
+      "jest --findRelatedTests",
       "git add"
     ],
     "src/**/*.{html,json,scss}": [
@@ -42,10 +46,28 @@
       "pre-commit": "lint-staged"
     }
   },
+  "jest": {
+    "transform": {
+      "^.+\\.js$": "babel-jest",
+      "^.+\\.vue$": "vue-jest"
+    },
+    "moduleFileExtensions": [
+      "js",
+      "vue"
+    ],
+    "moduleNameMapper": {
+      "^[~@]/(.*)$": "<rootDir>/src/$1"
+    },
+    "snapshotSerializers": [
+      "jest-serializer-vue"
+    ]
+  },
   "dependencies": {
     "contentful": "^7.1.0",
     "normalize.css": "^8.0.1",
     "nuxt": "^2.3.4",
+    "ramda": "^0.26.1",
+    "vue": "^2.5.22",
     "webfontloader": "^1.6.28"
   },
   "devDependencies": {
@@ -53,7 +75,11 @@
     "@nuxtjs/sitemap": "^0.2.0",
     "@nuxtjs/style-resources": "^0.1.1",
     "@vue/eslint-config-prettier": "^4.0.1",
+    "@vue/test-utils": "^1.0.0-beta.28",
+    "babel-core": "^6.26.3",
     "babel-eslint": "^10.0.1",
+    "babel-jest": "^23.6.0",
+    "babel-preset-env": "^1.7.0",
     "dotenv": "^6.2.0",
     "eslint": "^5.12.0",
     "eslint-config-standard": "^12.0.0",
@@ -66,12 +92,18 @@
     "eslint-plugin-vue": "^5.1.0",
     "git-branch": "^2.0.1",
     "husky": "^1.3.1",
+    "jest": "^23.6.0",
+    "jest-serializer-vue": "^2.0.2",
     "lint-staged": "^8.1.0",
     "node-sass": "^4.11.0",
     "nuxt-svg-loader": "^1.0.1",
     "prettier": "^1.15.3",
     "prettier-eslint-cli": "^4.7.1",
+    "rimraf": "^2.6.3",
     "sass-loader": "^7.1.0",
-    "serve": "^10.1.1"
+    "serve": "^10.1.1",
+    "vue-jest": "^3.0.2",
+    "vue-template-compiler": "^2.5.22",
+    "webpack": "^4.28.4"
   }
 }

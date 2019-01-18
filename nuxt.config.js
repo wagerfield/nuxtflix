@@ -98,6 +98,7 @@ export default {
   styleResources: {
     scss: [
       "styles/mixins.scss",
+      "styles/easing.scss",
       "styles/theme.scss"
     ]
   },

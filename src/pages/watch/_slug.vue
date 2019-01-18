@@ -1,6 +1,6 @@
 <template>
-  <div class="film-page grid">
-    <h1 class="title" v-text="film.title" />
+  <div class="watch-page grid">
+    <h1 class="title" v-text="title" />
     <v-image :src="film.cover.file.url" :alt="film.title" :width="600" />
   </div>
 </template>
@@ -10,12 +10,17 @@ export default {
   async asyncData({ app, params, payload }) {
     const film = payload || (await app.$cms.getFilmBySlug(params.slug))
     return { film }
+  },
+  computed: {
+    title() {
+      return `Watch: ${this.film.title}`
+    }
   }
 }
 </script>
 
 <style lang="scss" scoped>
-.film-page {
+.watch-page {
   padding-top: $header-height;
 
   .title,
@@ -25,10 +30,10 @@ export default {
 
   @include desktop {
     .title {
-      grid-column: half-1;
+      grid-column: half-2;
     }
     .image {
-      grid-column: half-2;
+      grid-column: half-1;
     }
   }
 }
