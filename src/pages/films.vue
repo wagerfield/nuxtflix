@@ -39,9 +39,9 @@ export default {
   text-indent: -2px;
   font-size: 4rem;
   color: $white;
-  &:after {
-    content: ":";
-  }
+  // &:after {
+  //   content: ":";
+  // }
 }
 
 .films-list {
