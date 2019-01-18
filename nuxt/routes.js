@@ -13,5 +13,10 @@ export default async () => {
   const cms = create(env)
   const films = await cms.getFilms()
   const filmRoutes = mapFilms(films)
-  return filmRoutes
+  return filmRoutes.concat([
+    {
+      route: "/films",
+      payload: films
+    }
+  ])
 }
