@@ -1,0 +1,41 @@
+$heading-font-fallback: "Arial Narrow", sans-serif;
+$heading-font-family: "Barlow Condensed", $heading-font-fallback;
+
+$body-font-fallback: "Arial", sans-serif;
+$body-font-family: "Barlow", $body-font-fallback;
+
+$mono-font-fallback: "Monaco", monospace;
+$mono-font-family: "Roboto Mono", $mono-font-fallback;
+
+$white: #ffffff;
+$smoke: #f3f3f5;
+$stone: #e1e1e6;
+$steel: #87878c;
+$slate: #49494d;
+$night: #303033;
+$black: #17171a;
+
+$red: #ff5b4c;
+$yellow: #ffd659;
+$green: #45e6b0;
+$sage: #c6e5df;
+$blue: #4c92d9;
+$purple: #855dd6;
+
+$text-color: $black;
+$link-color: $blue;
+$selection-color: $yellow;
+$tap-color: transparent;
+
+$outline-width: 3px;
+$outline-offset: 3px;
+$outline-style: solid;
+$outline-color: $yellow;
+$outline: $outline-color $outline-style $outline-width;
+
+$mobile-breakpoint: 400px;
+$desktop-breakpoint: 780px;
+$cinema-breakpoint: 1080px;
+
+$logo-size: 24px;
+$header-height: calc(2rem + #{$logo-size});

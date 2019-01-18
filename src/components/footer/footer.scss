@@ -1,0 +1,143 @@
+$footer-signature-breakpoint: 440px;
+$footer-link-active-color: $yellow;
+$footer-link-color: $stone;
+$footer-row-gap: 2rem;
+
+.footer {
+  font-size: 14px;
+  line-height: 1;
+  background-color: $black;
+  grid-row-gap: $footer-row-gap;
+  padding: $footer-row-gap 0;
+}
+
+.footer-logo-wrapper {
+  grid-column: half-1;
+  height: 24px;
+}
+
+.footer-logo-link {
+  display: inline-flex;
+  align-items: center;
+  color: $footer-link-color;
+  margin: -4px;
+}
+
+.footer-logo-text {
+  padding: 0 0.6rem;
+}
+
+.footer-nav-title,
+.footer-copyright,
+.footer-signature {
+  font-size: 13px;
+  color: $steel;
+}
+
+.footer-copyright {
+  grid-column: content;
+
+  @include above($footer-signature-breakpoint) {
+    grid-column: third-1;
+  }
+}
+
+.footer-signature {
+  grid-column: third-2 / third-3;
+  display: none;
+
+  a {
+    display: inline-block;
+    color: $yellow;
+  }
+
+  @include above($footer-signature-breakpoint) {
+    display: block;
+  }
+
+  @include desktop {
+    grid-column: half-2;
+  }
+}
+
+.footer-nav.sitemap-links {
+  grid-column: half-2;
+
+  @include tablet {
+    grid-column: third-1;
+  }
+
+  @include desktop {
+    grid-column: column-4;
+  }
+}
+
+.footer-nav.internal-links {
+  grid-column: half-1;
+
+  @include tablet {
+    grid-column: third-2;
+  }
+
+  @include desktop {
+    grid-column: column-5;
+  }
+}
+
+.footer-nav.external-links {
+  grid-column: half-2;
+
+  @include tablet {
+    grid-column: third-3;
+  }
+
+  @include desktop {
+    grid-column: column-6;
+  }
+}
+
+.footer-nav-title {
+  margin: 6px 0 1rem;
+}
+
+.footer-nav-item {
+  margin-top: 0.75rem;
+}
+
+.footer-nav-link {
+  position: relative;
+  display: inline-block;
+  color: $footer-link-color;
+  transition: color 0.2s ease-out;
+
+  &:before {
+    content: "";
+    display: block;
+    border: 5px solid $footer-link-color;
+    border-bottom-color: transparent;
+    border-right-color: transparent;
+    border-top-color: transparent;
+    position: absolute;
+    left: -10px;
+    top: 2px;
+    opacity: 0;
+    transition: all 0.2s $easeOutQuad;
+    @include move(-8px);
+  }
+
+  &.link-active {
+    pointer-events: none;
+
+    &:before {
+      @include move;
+      opacity: 1;
+    }
+  }
+
+  @include hover {
+    &:before {
+      @include move;
+      opacity: 1;
+    }
+  }
+}

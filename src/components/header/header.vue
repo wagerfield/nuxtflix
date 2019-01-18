@@ -1,10 +1,15 @@
 <template>
-  <header>
-    <nuxt-link to="/">Nuxtflix</nuxt-link>
-    <nav>
-      <ul>
-        <li v-for="link in links" :key="link.key">
-          <nuxt-link :to="link.path">{{ link.text }}</nuxt-link>
+  <header class="header mono">
+    <nuxt-link class="header-logo-link" to="/">
+      <v-logo />
+      <span class="header-logo-text">Nuxtflix</span>
+    </nuxt-link>
+    <nav class="header-nav">
+      <ul class="header-nav-list">
+        <li v-for="link in links" :key="link.key" class="header-nav-item">
+          <nuxt-link class="header-nav-link" :to="link.path">
+            <span v-text="link.text" />
+          </nuxt-link>
         </li>
       </ul>
     </nav>
@@ -26,14 +31,11 @@ export default {
           key: "about",
           path: "/about",
           text: "About"
-        },
-        {
-          key: "contact",
-          path: "/contact",
-          text: "Contact"
         }
       ]
     }
   }
 }
 </script>
+
+<style lang="scss" src="./header.scss" />

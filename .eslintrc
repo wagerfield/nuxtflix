@@ -1,0 +1,30 @@
+{
+  "root": true,
+  "extends": [
+    "standard",
+    "plugin:import/errors",
+    "plugin:import/warnings",
+    "plugin:jest/recommended",
+    "plugin:vue/recommended",
+    "@vue/prettier"
+  ],
+  "parserOptions": {
+    "parser": "babel-eslint",
+    "sourceType": "module"
+  },
+  "env": {
+    "serviceworker": true,
+    "browser": true,
+    "jest": true
+  },
+  "globals": {
+    "workbox": false
+  },
+  "settings": {
+    "import/resolver": {
+      "nuxt": {
+        "nuxtSrcDir": "src"
+      }
+    }
+  }
+}

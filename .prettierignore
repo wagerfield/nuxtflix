@@ -1,4 +1,6 @@
-package.json
-nuxt.config.js
 .nuxt
 dist
+
+package.json
+nuxt.config.js
+sw.js
