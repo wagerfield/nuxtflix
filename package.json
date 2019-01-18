@@ -29,7 +29,7 @@
     "src/**/*.{js,vue}": [
       "prettier-eslint --write",
       "eslint",
-      "jest",
+      "jest --findRelatedTests",
       "git add"
     ],
     "src/**/*.{html,json,scss}": [
