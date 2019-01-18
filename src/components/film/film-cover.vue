@@ -1,7 +1,7 @@
 <template>
   <component :is="tag" class="film-cover">
     <v-image
-      :src="film.poster.file.url"
+      :src="film.cover.file.url"
       :alt="film.title"
       :width="width"
       class="film-cover-image"
