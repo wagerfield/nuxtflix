@@ -38,4 +38,5 @@ export const mapEntry = ifElse(isEntry, transformEntry, transformEntries)
 
 export const mapEntries = map(mapEntry)
 
-export const queryType = (type) => ({ content_type: type })
+export const queryType = (type, query) =>
+  mergeRight(query, { content_type: type })
