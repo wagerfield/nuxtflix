@@ -1,3 +1,5 @@
+import { find, map, prop, propEq } from "ramda"
+
 export default {
   state: () => ({
     install: false,
@@ -21,10 +23,10 @@ export default {
   },
   getters: {
     filmSlugs({ films }) {
-      return films && films.map((film) => film.fields.slug)
+      return map(prop("slug"), films)
     },
     filmBySlug({ films }) {
-      return (slug) => films && films.find((film) => film.fields.slug === slug)
+      return (slug) => find(propEq("slug", slug), films)
     }
   },
   actions: {
