@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`render optional props 1`] = `
+<picture
+  class="picture"
+>
+  <source
+    srcset="/image.jpg?fm=webp&q=50&w=200&f=faces&fl=progressive"
+    type="image/webp"
+  />
+  <source
+    srcset="/image.jpg?fm=jpg&q=50&w=200&f=faces&fl=progressive"
+    type="image/jpeg"
+  />
+   
+  <img
+    alt="Foo"
+    src="/image.jpg?q=50&w=200&f=faces&fl=progressive"
+  />
+</picture>
+`;
+
+exports[`render required props 1`] = `
+<picture
+  class="picture"
+>
+  <source
+    srcset="/image.jpg?fm=webp"
+    type="image/webp"
+  />
+  <source
+    srcset="/image.jpg?fm=jpg"
+    type="image/jpeg"
+  />
+   
+  <img
+    alt="Foo"
+    src="/image.jpg"
+  />
+</picture>
+`;
