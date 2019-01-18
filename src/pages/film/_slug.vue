@@ -1,31 +1,15 @@
 <template>
   <div class="film-page grid">
-    <h1 v-text="title" />
-    <v-image :src="film.poster.file.url" :alt="film.title" />
+    <h1 class="title" v-text="film.title" />
+    <v-image :src="film.cover.file.url" :alt="film.title" :width="600" />
   </div>
 </template>
 
 <script>
 export default {
-  async validate({ store, params, payload }) {
-    if (payload) {
-      return true
-    } else {
-      await store.dispatch("getFilms")
-      const film = store.getters.filmBySlug(params.slug)
-      return Boolean(film)
-    }
-  },
-  computed: {
-    slug() {
-      return this.$route.params.slug
-    },
-    film() {
-      return this.$store.getters.filmBySlug(this.slug)
-    },
-    title() {
-      return `Film: ${this.film.title}`
-    }
+  async asyncData({ app, params, payload }) {
+    const film = payload || (await app.$cms.getFilmBySlug(params.slug))
+    return { film }
   }
 }
 </script>
@@ -33,5 +17,19 @@ export default {
 <style lang="scss" scoped>
 .film-page {
   padding-top: $header-height;
+
+  .title,
+  .image {
+    grid-column: content;
+  }
+
+  @include desktop {
+    .title {
+      grid-column: half-1;
+    }
+    .image {
+      grid-column: half-2;
+    }
+  }
 }
 </style>

@@ -12,13 +12,11 @@
 </template>
 
 <script>
-import { mapState } from "vuex"
-
 export default {
-  async fetch({ store }) {
-    await store.dispatch("getFilms")
+  async asyncData({ app, payload }) {
+    const films = payload || (await app.$cms.getFilms())
+    return { films }
   },
-  computed: mapState(["films"]),
   methods: {
     getPath(film) {
       return `/film/${film.slug}`
