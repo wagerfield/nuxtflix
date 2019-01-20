@@ -1,9 +1,11 @@
 <template>
-  <component :is="tag" class="film-cover">
+  <component :is="tag" class="film-cover" :style="style">
     <v-image
       :src="film.cover.file.url"
       :alt="film.title"
       :width="width"
+      :height="height"
+      fit="fill"
       class="film-cover-image"
     />
   </component>
@@ -20,9 +22,22 @@ export default {
       type: Number,
       default: 400
     },
+    ratio: {
+      type: Number,
+      default: 1.48 // Cover art aspect ratio
+    },
     tag: {
       type: String,
       default: "div"
+    }
+  },
+  computed: {
+    height() {
+      return Math.ceil(this.width * this.ratio)
+    },
+    style() {
+      const paddingBottom = `${Math.ceil(this.ratio * 100)}%`
+      return { paddingBottom }
     }
   }
 }
@@ -32,7 +47,6 @@ export default {
 .film-cover {
   overflow: hidden;
   position: relative;
-  padding-bottom: 148%; // Cover art aspect ratio
 }
 
 .film-cover-image {
