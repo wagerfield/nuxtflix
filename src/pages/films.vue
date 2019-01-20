@@ -70,6 +70,7 @@ export default {
 @include above(1280px) {
   .films-list {
     margin: 1rem 2rem 0;
+    grid-row-gap: 2rem;
   }
 }
 </style>
