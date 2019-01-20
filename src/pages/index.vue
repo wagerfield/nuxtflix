@@ -36,21 +36,21 @@ export default {
   background-image: url("~assets/images/interstellar.webp");
   background-size: cover;
   min-height: 100%;
+}
 
-  .title {
-    grid-area: title / content;
-    font-size: 4rem;
-    max-width: 20ch;
-    color: $white;
+.title {
+  grid-area: title / content;
+  font-size: 4rem;
+  max-width: 20ch;
+  color: $white;
 
-    @include desktop {
-      font-size: 5rem;
-    }
+  @include desktop {
+    font-size: 5rem;
   }
+}
 
-  .callout {
-    grid-area: callout / content;
-    justify-self: start;
-  }
+.callout {
+  grid-area: callout / content;
+  justify-self: start;
 }
 </style>

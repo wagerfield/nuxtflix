@@ -22,19 +22,19 @@ export default {
 <style lang="scss" scoped>
 .watch-page {
   padding-top: $header-height;
+}
 
-  .title,
-  .image {
-    grid-column: content;
+.title,
+.image {
+  grid-column: content;
+}
+
+@include desktop {
+  .title {
+    grid-column: half-2;
   }
-
-  @include desktop {
-    .title {
-      grid-column: half-2;
-    }
-    .image {
-      grid-column: half-1;
-    }
+  .image {
+    grid-column: half-1;
   }
 }
 </style>

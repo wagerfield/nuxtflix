@@ -1,6 +1,6 @@
 <template>
   <div class="films-page grid">
-    <h1 class="uppercase title">Films</h1>
+    <header class="films-header"><h1 class="uppercase title">Films</h1></header>
     <ul class="films-list">
       <li v-for="film in films" :key="film.id">
         <nuxt-link :to="getPath(film)">
@@ -33,15 +33,16 @@ export default {
   min-height: 100%;
 }
 
-.title {
+.films-header {
   grid-column: content;
-  margin-bottom: 1.4rem;
-  text-indent: -2px;
-  font-size: 4rem;
+  margin: 1rem 0;
+}
+
+.title {
+  margin: -6px 0 -2px;
+  text-indent: -1px;
+  font-size: 2.5rem;
   color: $white;
-  // &:after {
-  //   content: ":";
-  // }
 }
 
 .films-list {
@@ -51,17 +52,25 @@ export default {
   display: grid;
   grid-gap: 1rem;
   align-content: flex-start;
-  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
 }
 
 @include desktop {
-  .title {
-    grid-column: gutter;
+  .films-header {
+    margin: 1rem;
   }
 
   .films-list {
-    grid-column: gutter;
-    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    margin: 1rem 1rem 0;
+    grid-column: bleed;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  }
+}
+
+@include above(1280px) {
+  .films-list {
+    margin: 1rem 2rem 0;
+    grid-row-gap: 2rem;
   }
 }
 </style>

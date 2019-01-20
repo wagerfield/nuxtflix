@@ -1,5 +1,6 @@
 import { createClient } from "contentful"
 import { mapEntry, mapEntries, queryType } from "./utils"
+import { validateFilms, validateFilm } from "./film"
 
 export default (env) => {
   // Client
@@ -15,12 +16,14 @@ export default (env) => {
     async getFilms() {
       const query = queryType("film")
       const entries = await client.getEntries(query)
-      return mapEntries(entries.items)
+      const films = mapEntries(entries.items)
+      return validateFilms(films)
     },
     async getFilmBySlug(slug) {
       const query = queryType("film", { "fields.slug": slug })
       const entries = await client.getEntries(query)
-      return mapEntry(entries.items[0])
+      const film = mapEntry(entries.items[0])
+      return validateFilm(film)
     }
   }
 }
