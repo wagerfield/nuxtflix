@@ -5,17 +5,18 @@ exports[`Image renders optional props 1`] = `
   class="image"
 >
   <source
-    srcset="/image.jpg?fm=webp&fl=progressive&f=faces&q=50&w=200"
+    data-srcset="/image.jpg?fm=webp&fl=progressive&f=faces&q=50&w=200"
     type="image/webp"
   />
   <source
-    srcset="/image.jpg?fm=jpg&fl=progressive&f=faces&q=50&w=200"
+    data-srcset="/image.jpg?fm=jpg&fl=progressive&f=faces&q=50&w=200"
     type="image/jpeg"
   />
    
   <img
     alt="Foo"
-    src="/image.jpg?fl=progressive&f=faces&q=50&w=200"
+    class="lazyload"
+    data-src="/image.jpg?fl=progressive&f=faces&q=50&w=200"
   />
 </picture>
 `;
@@ -25,17 +26,18 @@ exports[`Image renders required props 1`] = `
   class="image"
 >
   <source
-    srcset="/image.jpg?fm=webp"
+    data-srcset="/image.jpg?fm=webp"
     type="image/webp"
   />
   <source
-    srcset="/image.jpg?fm=jpg"
+    data-srcset="/image.jpg?fm=jpg"
     type="image/jpeg"
   />
    
   <img
     alt="Foo"
-    src="/image.jpg"
+    class="lazyload"
+    data-src="/image.jpg"
   />
 </picture>
 `;

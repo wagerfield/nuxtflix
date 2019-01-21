@@ -4,9 +4,9 @@
       v-for="source in sources"
       :key="source.type"
       :type="source.type"
-      :srcset="source.srcset"
+      :data-srcset="source.srcset"
     />
-    <img :src="url" :alt="alt" />
+    <img :data-src="url" :alt="alt" class="lazyload" />
   </picture>
 </template>
 
@@ -47,6 +47,17 @@ export default {
   source {
     display: block;
     width: 100%;
+  }
+
+  .lazyload,
+  .lazyloading,
+  .lazyloaded {
+    transition: opacity 0.5s $easeOutQuad;
+    opacity: 0;
+  }
+
+  .lazyloaded {
+    opacity: 1;
   }
 }
 </style>
