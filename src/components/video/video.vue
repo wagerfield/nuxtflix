@@ -1,6 +1,6 @@
 <template>
   <div class="video">
-    <iframe class="video-iframe" :alt="alt" :src="src" allowfullscreen />
+    <iframe class="video-iframe" :src="src" allowfullscreen />
   </div>
 </template>
 
