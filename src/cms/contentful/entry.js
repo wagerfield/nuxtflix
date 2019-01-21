@@ -1,7 +1,6 @@
 import {
   converge,
   ifElse,
-  is,
   map,
   mergeRight,
   pick,
@@ -10,16 +9,7 @@ import {
   when,
   where
 } from "ramda"
-
-export const isArray = Array.isArray || is(Array)
-
-export const isBoolean = is(Boolean)
-
-export const isNumber = is(Number)
-
-export const isObject = is(Object)
-
-export const isString = is(String)
+import { isArray, isObject } from "../../core/utils"
 
 export const isEntry = where({
   fields: isObject,

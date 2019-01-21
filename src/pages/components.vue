@@ -18,11 +18,11 @@
 
 <style lang="scss" scoped>
 .components-page {
-  min-height: 100%;
-  position: relative;
-  background: $stone;
   align-content: flex-start;
   padding-top: $header-height;
+  box-sizing: border-box;
+  background: $stone;
+  min-height: 100%;
 }
 
 h1 {

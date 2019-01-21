@@ -1,6 +1,6 @@
 import { createClient } from "contentful"
-import { mapEntry, mapEntries, queryType } from "./utils"
-import { validateFilms, validateFilm } from "./film"
+import { mapEntry, mapEntries, queryType } from "./entry"
+import { validateFilms, validateFilm } from "../types/film"
 
 export default (env) => {
   // Client

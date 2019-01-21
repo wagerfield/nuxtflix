@@ -6,7 +6,7 @@
       :type="source.type"
       :data-srcset="source.srcset"
     />
-    <img :data-src="url" :alt="alt" class="lazyload" />
+    <img :alt="alt" :data-src="url" class="lazyload" />
   </picture>
 </template>
 
@@ -52,7 +52,8 @@ export default {
   .lazyload,
   .lazyloading,
   .lazyloaded {
-    transition: opacity 0.5s $easeOutQuad;
+    @include move;
+    transition: opacity 0.4s $easeOutQuad;
     opacity: 0;
   }
 

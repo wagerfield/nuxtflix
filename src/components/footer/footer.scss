@@ -1,5 +1,4 @@
-$footer-signature-breakpoint: 440px;
-$footer-link-active-color: $yellow;
+$footer-signature-breakpoint: 560px;
 $footer-link-color: $stone;
 $footer-row-gap: 2rem;
 
@@ -48,7 +47,7 @@ $footer-row-gap: 2rem;
 
   a {
     display: inline-block;
-    color: $yellow;
+    color: $footer-link-color;
   }
 
   @include above($footer-signature-breakpoint) {

@@ -3,7 +3,7 @@
     <header class="films-header"><h1 class="uppercase title">Films</h1></header>
     <ul class="films-list">
       <li v-for="film in films" :key="film.id">
-        <nuxt-link :to="getPath(film)">
+        <nuxt-link class="films-link" :to="getPath(film)">
           <v-film-cover :film="film" />
         </nuxt-link>
       </li>
@@ -19,7 +19,7 @@ export default {
   },
   methods: {
     getPath(film) {
-      return `/film/${film.slug}`
+      return `/watch/${film.slug}`
     }
   }
 }
@@ -29,6 +29,7 @@ export default {
 .films-page {
   padding-top: $header-height;
   align-content: flex-start;
+  box-sizing: border-box;
   background: $black;
   min-height: 100%;
 }
@@ -43,10 +44,13 @@ export default {
   text-indent: -1px;
   font-size: 2.5rem;
   color: $white;
+  &:after {
+    content: ".";
+  }
 }
 
 .films-list {
-  margin-top: 1rem;
+  margin: 1rem 0;
   grid-column: content;
 
   display: grid;
@@ -55,13 +59,22 @@ export default {
   grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
 }
 
+.films-link {
+  display: block;
+}
+
 @include desktop {
   .films-header {
     margin: 1rem;
   }
 
+  .title {
+    margin: -6px 0 -3px;
+    text-indent: -2px;
+  }
+
   .films-list {
-    margin: 1rem 1rem 0;
+    margin: 1rem;
     grid-column: bleed;
     grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
   }
