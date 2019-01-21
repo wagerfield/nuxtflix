@@ -19,7 +19,7 @@ export default {
   },
   methods: {
     getPath(film) {
-      return `/film/${film.slug}`
+      return `/watch/${film.slug}`
     }
   }
 }
