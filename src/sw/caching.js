@@ -8,9 +8,9 @@ const expire1y = new workbox.expiration.Plugin({
   maxAgeSeconds: 60 * 60 * 24 * 365 // 1 year
 })
 
-const expire7d = new workbox.expiration.Plugin({
-  maxAgeSeconds: 60 * 60 * 24 * 7 // 7 days
-})
+// const expire7d = new workbox.expiration.Plugin({
+//   maxAgeSeconds: 60 * 60 * 24 * 7 // 7 days
+// })
 
 // Styles
 
@@ -57,10 +57,10 @@ workbox.routing.registerRoute(
 
 // Contentful Images
 
-workbox.routing.registerRoute(
-  new RegExp(".+images.ctfassets.net.*"),
-  workbox.strategies.cacheFirst({
-    cacheName: "contentful-images",
-    plugins: [success, expire7d]
-  })
-)
+// workbox.routing.registerRoute(
+//   new RegExp(".+images.ctfassets.net.*"),
+//   workbox.strategies.cacheFirst({
+//     cacheName: "contentful-images",
+//     plugins: [success, expire7d]
+//   })
+// )
