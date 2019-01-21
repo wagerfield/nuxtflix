@@ -32,18 +32,18 @@
     </nav>
     <span class="footer-copyright">Copyright 2019</span>
     <span class="footer-signature"
-      >Made with love for <a :href="KING">King</a></span
+      >Made with love by <a :href="WAGERFIELD">Matthew Wagerfield</a> xoxo</span
     >
   </footer>
 </template>
 
 <script>
-import { KING } from "~/core/links"
+import { WAGERFIELD } from "~/core/links"
 import links from "./links"
 
 export default {
   static: {
-    KING
+    WAGERFIELD
   },
   props: {
     groups: {
