@@ -29,6 +29,7 @@ export default {
 .films-page {
   padding-top: $header-height;
   align-content: flex-start;
+  box-sizing: border-box;
   background: $black;
   min-height: 100%;
 }
@@ -43,6 +44,9 @@ export default {
   text-indent: -1px;
   font-size: 2.5rem;
   color: $white;
+  &:after {
+    content: ".";
+  }
 }
 
 .films-list {
@@ -58,6 +62,11 @@ export default {
 @include desktop {
   .films-header {
     margin: 1rem;
+  }
+
+  .title {
+    margin: -6px 0 -3px;
+    text-indent: -2px;
   }
 
   .films-list {
