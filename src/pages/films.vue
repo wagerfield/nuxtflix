@@ -3,7 +3,7 @@
     <header class="films-header"><h1 class="uppercase title">Films</h1></header>
     <ul class="films-list">
       <li v-for="film in films" :key="film.id">
-        <nuxt-link :to="getPath(film)">
+        <nuxt-link class="films-link" :to="getPath(film)">
           <v-film-cover :film="film" />
         </nuxt-link>
       </li>
@@ -50,13 +50,17 @@ export default {
 }
 
 .films-list {
-  margin-top: 1rem;
+  margin: 1rem 0;
   grid-column: content;
 
   display: grid;
   grid-gap: 1rem;
   align-content: flex-start;
   grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+}
+
+.films-link {
+  display: block;
 }
 
 @include desktop {
@@ -70,7 +74,7 @@ export default {
   }
 
   .films-list {
-    margin: 1rem 1rem 0;
+    margin: 1rem;
     grid-column: bleed;
     grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
   }
