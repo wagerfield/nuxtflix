@@ -71,6 +71,9 @@ export default {
     src: "plugins/webfonts",
     ssr: false
   }, {
+    src: "plugins/lazysizes",
+    ssr: false
+  }, {
     src: "plugins/components",
     ssr: true
   }, {
