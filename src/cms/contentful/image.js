@@ -3,11 +3,9 @@ import {
   both,
   either,
   equals,
-  flip,
   gte,
   keys,
   lte,
-  includes,
   pickBy,
   pipe,
   prop,
@@ -16,7 +14,7 @@ import {
   sortBy,
   toPairs
 } from "ramda"
-import { isNumber } from "./utils"
+import { isNumber, oneOf, propFrom } from "~/core/utils"
 
 const OPTION_MAP = {
   background: "bg",
@@ -30,10 +28,6 @@ const OPTION_MAP = {
 }
 
 const OPTION_KEYS = keys(OPTION_MAP)
-
-const oneOf = flip(includes)
-
-const propFrom = flip(prop)
 
 const typeFromFormat = propFrom({
   png: "image/png",

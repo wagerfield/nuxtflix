@@ -1,7 +1,11 @@
-import { always, either, filter, isNil, unless, where } from "ramda"
-import { isArray, isBoolean, isNumber, isObject, isString } from "./utils"
-
-const optionalArray = either(isArray, isNil)
+import { always, filter, unless, where } from "ramda"
+import {
+  isBoolean,
+  isNumber,
+  isObject,
+  isString,
+  optArray
+} from "../../core/utils"
 
 export const isFilm = where({
   // Sys
@@ -14,8 +18,8 @@ export const isFilm = where({
   description: isObject,
   releaseDate: isString,
   rating: isNumber,
-  cast: optionalArray,
-  images: optionalArray,
+  cast: optArray,
+  images: optArray,
   cover: isObject,
   trailer: isString,
   watchable: isBoolean

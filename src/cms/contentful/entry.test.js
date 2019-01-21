@@ -1,4 +1,4 @@
-import { mapEntry, isEntry } from "./utils"
+import { mapEntry, isEntry } from "./entry"
 
 test("isEntry(entry)", () => {
   expect(isEntry({ fields: {}, sys: 10 })).toBe(false)
