@@ -23,7 +23,7 @@ export default {
   align-content: center;
   padding-top: $header-height;
   box-sizing: border-box;
-  background: $stone;
+  background: $yellow;
   min-height: 100%;
 
   .content {
