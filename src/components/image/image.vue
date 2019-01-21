@@ -52,7 +52,7 @@ export default {
   .lazyload,
   .lazyloading,
   .lazyloaded {
-    // @include move;
+    @include move;
     transition: opacity 0.4s $easeOutQuad;
     opacity: 0;
   }
