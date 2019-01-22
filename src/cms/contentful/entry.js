@@ -18,7 +18,7 @@ export const isEntry = where({
 
 export const parseFields = pipe(
   prop("fields"),
-  map((entry) => mapEntry(entry))
+  map((value) => mapEntry(value))
 )
 
 export const parseSys = pipe(
@@ -28,7 +28,7 @@ export const parseSys = pipe(
 
 export const transformEntry = converge(mergeRight, [parseFields, parseSys])
 
-export const transformEntries = when(isArray, map((entry) => mapEntry(entry)))
+export const transformEntries = when(isArray, map((value) => mapEntry(value)))
 
 export const mapEntry = ifElse(isEntry, transformEntry, transformEntries)
 
