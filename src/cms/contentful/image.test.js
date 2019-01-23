@@ -1,23 +1,86 @@
-import { buildQuery, props } from "./image"
+import { buildQuery, buildSources, buildUrl, props } from "./image"
+
+const src = "/images/cat.jpg"
+const err = "src undefined"
 
 describe("buildQuery(options)", () => {
   test("without options", () => {
     expect(buildQuery()).toBe("")
-  })
-
-  test("with empty options", () => {
     expect(buildQuery({})).toBe("")
   })
 
-  test("with supplied options", () => {
+  test("with options", () => {
     const result = buildQuery({
-      foo: "bar", // Invalid key
+      foo: "bar", // Ignored key
       width: 100,
       height: 200,
       fit: "fill"
     })
     // Keys sorted alphabetically
     expect(result).toBe("&fit=fill&h=200&w=100")
+  })
+})
+
+describe("buildUrl(src, options)", () => {
+  test("without src", () => {
+    expect(() => {
+      buildUrl()
+    }).toThrow(err)
+  })
+
+  test("without options", () => {
+    expect(buildUrl(src)).toBe(src)
+  })
+
+  test("with options", () => {
+    expect(
+      buildUrl(src, {
+        width: 200,
+        height: 100,
+        fit: "crop"
+      })
+    ).toBe(`${src}?fit=crop&h=100&w=200`)
+  })
+})
+
+describe("buildSources(src, options)", () => {
+  test("without src", () => {
+    expect(() => {
+      buildSources()
+    }).toThrow(err)
+  })
+
+  test("without options", () => {
+    expect(buildSources(src)).toEqual([
+      {
+        srcset: `${src}?fm=webp`,
+        type: "image/webp"
+      },
+      {
+        srcset: `${src}?fm=jpg`,
+        type: "image/jpeg"
+      }
+    ])
+  })
+
+  test("with options", () => {
+    const query = "&fit=crop&h=100&w=200"
+    expect(
+      buildSources(src, {
+        width: 200,
+        height: 100,
+        fit: "crop"
+      })
+    ).toEqual([
+      {
+        srcset: `${src}?fm=webp${query}`,
+        type: "image/webp"
+      },
+      {
+        srcset: `${src}?fm=jpg${query}`,
+        type: "image/jpeg"
+      }
+    ])
   })
 })
 

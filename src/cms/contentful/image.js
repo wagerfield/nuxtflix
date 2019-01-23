@@ -1,33 +1,17 @@
-import {
-  __,
-  both,
-  either,
-  equals,
-  gte,
-  keys,
-  lte,
-  pickBy,
-  pipe,
-  prop,
-  reduce,
-  replace,
-  sortBy,
-  toPairs
-} from "ramda"
-import { isNumber, oneOf, propFrom } from "~/core/utils"
+import { __, both, either, equals, gte, lte, unless } from "ramda"
+import { isNumber, isString, oneOf, propFrom } from "~/core/utils"
 
-const OPTION_MAP = {
-  background: "bg",
-  quality: "q",
-  radius: "r",
-  height: "h",
-  width: "w",
-  focus: "f",
-  flag: "fl",
-  fit: "fit"
-}
-
-const OPTION_KEYS = keys(OPTION_MAP)
+// Keys sorted alphabetically
+export const OPTIONS = [
+  ["background", "bg"],
+  ["fit", "fit"],
+  ["flag", "fl"],
+  ["focus", "f"],
+  ["height", "h"],
+  ["quality", "q"],
+  ["radius", "r"],
+  ["width", "w"]
+]
 
 const typeFromFormat = propFrom({
   png: "image/png",
@@ -35,46 +19,36 @@ const typeFromFormat = propFrom({
   webp: "image/webp"
 })
 
-const queryFromOption = propFrom(OPTION_MAP)
-
-const formatQuery = replace(/^&/, "?")
-
-const sortByKey = sortBy(prop(0))
-
-const isOptionKey = oneOf(OPTION_KEYS)
-
-const pickOptions = pickBy((val, key) => isOptionKey(key) && Boolean(val))
-
-const parseOptions = pipe(
-  pickOptions,
-  toPairs,
-  sortByKey,
-  reduce((acc, [key, val]) => {
-    return `${acc}&${queryFromOption(key)}=${val}`
-  }, "")
-)
-
 const getFormat = (url) => {
   const match = url.match(/\.([\w]+)$/)
   return match && match[1]
 }
 
+const checkSrc = unless(isString, () => {
+  throw new Error("src undefined")
+})
+
 export const buildQuery = (options) => {
-  return options ? parseOptions(options) : ""
+  return OPTIONS.reduce((acc, [key, query]) => {
+    const value = options && options[key]
+    return value ? `${acc}&${query}=${value}` : acc
+  }, "")
+}
+
+export const buildUrl = (src, options) => {
+  const base = checkSrc(src)
+  const query = buildQuery(options)
+  return `${base}${query.replace(/^&/, "?")}`
 }
 
 export const buildSources = (src, options) => {
-  const formats = ["webp", getFormat(src)]
+  const base = checkSrc(src)
+  const formats = ["webp", getFormat(base)]
   const query = buildQuery(options)
   return formats.map((format) => ({
     srcset: `${src}?fm=${format}${query}`,
     type: typeFromFormat(format)
   }))
-}
-
-export const buildUrl = (src, options) => {
-  const query = buildQuery(options)
-  return `${src}${formatQuery(query)}`
 }
 
 export const props = {
