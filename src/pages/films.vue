@@ -15,7 +15,7 @@
 export default {
   async asyncData({ app, payload }) {
     const films = payload || (await app.$cms.getFilms())
-    return { films: Object.freeze(films) }
+    return { films }
   },
   methods: {
     getPath(film) {
