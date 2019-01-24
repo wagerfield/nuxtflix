@@ -39,3 +39,5 @@ $cinema-breakpoint: 1080px;
 
 $logo-size: 24px;
 $header-height: calc(2rem + #{$logo-size});
+
+$fade: opacity 0.4s $easeOutQuad;

@@ -1,6 +1,6 @@
 <template>
   <div class="video">
-    <iframe class="video-iframe" :src="src" allowfullscreen />
+    <iframe class="video-iframe lazyload" :data-src="src" allowfullscreen />
   </div>
 </template>
 
@@ -28,5 +28,17 @@ export default {
   border: none;
   width: 100%;
   height: 100%;
+
+  &.lazyload,
+  &.lazyloading,
+  &.lazyloaded {
+    @include move;
+    transition: $fade;
+    opacity: 0;
+  }
+
+  &.lazyloaded {
+    opacity: 1;
+  }
 }
 </style>
