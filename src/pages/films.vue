@@ -28,6 +28,7 @@ export default {
 <style lang="scss" scoped>
 .films-page {
   padding-top: $header-height;
+  border-bottom: 1px dashed $night;
   align-content: flex-start;
   box-sizing: border-box;
   background: $black;
@@ -82,7 +83,7 @@ export default {
 
 @include above(1280px) {
   .films-list {
-    margin: 1rem 2rem;
+    margin: 1rem 2rem 2rem;
     grid-row-gap: 2rem;
   }
 }
