@@ -4,6 +4,7 @@
       :alt="film.title"
       :src="film.cover.file.url"
       :dimensions="dimensions"
+      object-fit="cover"
       fit="fill"
     />
   </component>

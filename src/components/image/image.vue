@@ -81,7 +81,8 @@ export default {
       return buildSrcset(this.src, this.options)
     },
     styles() {
-      return { objectPosition: this.objectPosition }
+      const objectPosition = this.objectPosition
+      return objectPosition ? { objectPosition } : {}
     },
     url() {
       return buildUrl(this.src, this.options)
@@ -96,6 +97,7 @@ export default {
 
   img[data-sizes="auto"] {
     display: block;
+    width: 100%;
   }
 
   img.cover,
