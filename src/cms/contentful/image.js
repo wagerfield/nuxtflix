@@ -50,6 +50,12 @@ export const isDimensions = isArrayAnd(all(isNumber))
 
 export const isDimensionsList = isArrayAnd(all(isDimensions))
 
+const meta = curry((postfix, value) => (value ? ` ${value}${postfix}` : ""))
+
+const w = meta("w")
+
+const h = meta("h")
+
 const getFormat = (url) => {
   const match = url.match(/\.([\w]+)$/)
   return match && match[1]
@@ -73,8 +79,7 @@ const buildSrc = curry((src, options, dimensions) => {
   const width = propOr(optionsWidth, 0, dimensions)
   const height = propOr(optionsHeight, 1, dimensions)
   const query = buildQuery(mergeOptions({ width, height }))
-  const meta = width ? ` ${width}w` : ""
-  return `${src}${query}${meta}`
+  return `${src}${query}${w(width)}${h(height)}`
 })
 
 export const buildSrcset = (src, options) => {

@@ -44,12 +44,11 @@ describe("buildSrcset(src, options)", () => {
   test("with options", () => {
     expect(
       buildSrcset(src, {
-        width: 200,
-        height: 100,
         format: "webp",
+        width: 200,
         fit: "crop"
       })
-    ).toBe(`${src}?fit=crop&fm=webp&h=100&w=200 200w`)
+    ).toBe(`${src}?fit=crop&fm=webp&w=200 200w`)
   })
 
   test("with dimensions", () => {
@@ -60,7 +59,7 @@ describe("buildSrcset(src, options)", () => {
       format: "webp",
       fit: "crop"
     })
-    const expected = `${src}?fit=crop&fm=webp&h=100&w=300 300w`
+    const expected = `${src}?fit=crop&fm=webp&h=100&w=300 300w 100h`
     expect(result).toBe(expected)
   })
 
@@ -73,8 +72,8 @@ describe("buildSrcset(src, options)", () => {
       fit: "crop"
     })
     const expected = [
-      `${src}?fit=crop&fm=webp&h=200&w=300 300w`,
-      `${src}?fit=crop&fm=webp&h=100&w=400 400w`
+      `${src}?fit=crop&fm=webp&h=200&w=300 300w 200h`,
+      `${src}?fit=crop&fm=webp&h=100&w=400 400w 100h`
     ].join(", ")
     expect(result).toBe(expected)
   })
@@ -131,11 +130,11 @@ describe("buildSources(src, options)", () => {
       })
     ).toEqual([
       {
-        srcset: `${src}?fit=crop&fm=webp&h=100&w=200 200w`,
+        srcset: `${src}?fit=crop&fm=webp&h=100&w=200 200w 100h`,
         type: "image/webp"
       },
       {
-        srcset: `${src}?fit=crop&fm=jpg&h=100&w=200 200w`,
+        srcset: `${src}?fit=crop&fm=jpg&h=100&w=200 200w 100h`,
         type: "image/jpeg"
       }
     ])
