@@ -1,3 +1,5 @@
+import "lazysizes/plugins/respimg/ls.respimg"
+import "lazysizes/plugins/optimumx/ls.optimumx"
 import lazysizes from "lazysizes"
 
 export default ({ query }) => {

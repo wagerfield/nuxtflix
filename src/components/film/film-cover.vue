@@ -6,7 +6,7 @@
       :width="width"
       :height="height"
       fit="fill"
-      class="film-cover-image"
+      webp
     />
   </component>
 </template>
@@ -47,14 +47,14 @@ export default {
 .film-cover {
   overflow: hidden;
   position: relative;
-}
 
-.film-cover-image {
-  position: absolute;
-  display: block;
-  height: 100%;
-  width: 100%;
-  left: 0;
-  top: 0;
+  .image {
+    position: absolute;
+    display: block;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+  }
 }
 </style>
