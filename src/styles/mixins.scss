@@ -22,6 +22,11 @@
   box-shadow: 0 0 0 $width $color inset;
 }
 
+@mixin object-fit($value) {
+  object-fit: $value;
+  font-family: "object-fit: #{$value}";
+}
+
 @mixin pseudo($location, $content: "", $display: block) {
   &:#{$location} {
     content: $content;
