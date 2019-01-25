@@ -13,17 +13,17 @@ export default (env) => {
 
   // API
   return {
-    async getFilms() {
-      const query = queryType("film")
+    async getFilms(options, validate = true) {
+      const query = queryType("film", options)
       const entries = await client.getEntries(query)
       const films = mapEntries(entries.items)
-      return validateFilms(films)
+      return validate ? validateFilms(films) : films
     },
-    async getFilmBySlug(slug) {
+    async getFilmBySlug(slug, validate = true) {
       const query = queryType("film", { "fields.slug": slug })
       const entries = await client.getEntries(query)
       const film = mapEntry(entries.items[0])
-      return validateFilm(film)
+      return validate ? validateFilm(film) : film
     }
   }
 }

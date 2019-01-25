@@ -14,7 +14,8 @@
 <script>
 export default {
   async asyncData({ app, payload }) {
-    const films = payload || (await app.$cms.getFilms())
+    const select = "sys.id,fields.title,fields.cover,fields.slug"
+    const films = payload || (await app.$cms.getFilms({ select }, false))
     return { films }
   },
   methods: {
