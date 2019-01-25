@@ -4,7 +4,7 @@
     <ul class="films-list">
       <li v-for="film in films" :key="film.id">
         <nuxt-link class="films-link" :to="getPath(film)">
-          <v-film-cover :film="film" />
+          <v-film-cover :film="film" :widths="[220, 400]" />
         </nuxt-link>
       </li>
     </ul>

@@ -1,10 +1,9 @@
 <template>
   <component :is="tag" class="film-cover" :style="style">
     <v-image
-      :src="film.cover.file.url"
       :alt="film.title"
-      :width="width"
-      :height="height"
+      :src="film.cover.file.url"
+      :dimensions="dimensions"
       fit="fill"
       webp
     />
@@ -18,9 +17,9 @@ export default {
       type: Object,
       required: true
     },
-    width: {
-      type: Number,
-      default: 400
+    widths: {
+      type: Array,
+      default: () => [240]
     },
     ratio: {
       type: Number,
@@ -32,12 +31,17 @@ export default {
     }
   },
   computed: {
-    height() {
-      return Math.ceil(this.width * this.ratio)
+    dimensions() {
+      return this.widths.map((width) => [width, this.height(width)])
     },
     style() {
       const paddingBottom = `${Math.ceil(this.ratio * 100)}%`
       return { paddingBottom }
+    }
+  },
+  methods: {
+    height(width) {
+      return Math.ceil(width * this.ratio)
     }
   }
 }
