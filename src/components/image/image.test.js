@@ -12,6 +12,17 @@ describe("Image", () => {
     expect(wrapper.element).toMatchSnapshot()
   })
 
+  test("renders sources with webp flag", () => {
+    const wrapper = shallowMount(Image, {
+      propsData: {
+        src: "/image.jpg",
+        alt: "Foo",
+        webp: true
+      }
+    })
+    expect(wrapper.element).toMatchSnapshot()
+  })
+
   test("renders optional props", () => {
     const wrapper = shallowMount(Image, {
       propsData: {

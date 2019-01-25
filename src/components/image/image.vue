@@ -1,30 +1,57 @@
 <template>
   <picture class="image">
-    <source
-      v-for="source in sources"
-      :key="source.type"
-      :type="source.type"
-      :data-srcset="source.srcset"
+    <template v-if="webp">
+      <source
+        v-for="source in sources"
+        :key="source.type"
+        :type="source.type"
+        :data-srcset="source.srcset"
+        :data-optimumx="optimumx"
+        :data-sizes="sizes"
+      />
+    </template>
+    <img
+      :alt="alt"
+      :data-src="url"
+      :data-srcset="srcset"
+      :data-optimumx="optimumx"
+      :data-sizes="sizes"
+      class="lazyload"
     />
-    <img :alt="alt" :data-src="url" class="lazyload" />
   </picture>
 </template>
 
 <script>
 import { mergeRight, omit } from "ramda"
-import { buildSources, buildUrl, props } from "~/cms/contentful/image"
+import {
+  buildSources,
+  buildSrcset,
+  buildUrl,
+  props
+} from "~/cms/contentful/image"
 
-const buildOptions = omit(["src", "alt"])
+const buildOptions = omit(["alt", "src", "sizes", "optimumx", "webp"])
 
 export default {
   props: mergeRight(props, {
+    alt: {
+      type: String,
+      required: true
+    },
     src: {
       type: String,
       required: true
     },
-    alt: {
+    sizes: {
       type: String,
-      required: true
+      default: "auto"
+    },
+    optimumx: {
+      type: [Number, String],
+      default: "auto"
+    },
+    webp: {
+      type: Boolean
     }
   }),
   computed: {
@@ -33,6 +60,9 @@ export default {
     },
     sources() {
       return buildSources(this.src, this.options)
+    },
+    srcset() {
+      return buildSrcset(this.src, this.options)
     },
     url() {
       return buildUrl(this.src, this.options)
@@ -43,8 +73,7 @@ export default {
 
 <style lang="scss">
 .image {
-  img,
-  source {
+  img[data-sizes="auto"] {
     display: block;
     width: 100%;
   }

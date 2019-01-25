@@ -1,5 +1,25 @@
-import { __, both, either, equals, gte, lte, unless } from "ramda"
-import { isNumber, isString, oneOf, propFrom } from "~/core/utils"
+import {
+  __,
+  all,
+  both,
+  concat,
+  curry,
+  either,
+  equals,
+  ifElse,
+  join,
+  gte,
+  lte,
+  map,
+  mergeRight,
+  prop,
+  propOr,
+  unless,
+  when
+} from "ramda"
+import { isNumber, isString, oneOf, propFrom, isArray } from "~/core/utils"
+
+export const DIMENSIONS = ["w", "h"]
 
 // Keys sorted alphabetically
 export const OPTIONS = [
@@ -7,17 +27,28 @@ export const OPTIONS = [
   ["fit", "fit"],
   ["flag", "fl"],
   ["focus", "f"],
+  ["format", "fm"],
   ["height", "h"],
   ["quality", "q"],
   ["radius", "r"],
   ["width", "w"]
 ]
 
+const isArrayAnd = both(isArray)
+
 const typeFromFormat = propFrom({
   png: "image/png",
   jpg: "image/jpeg",
   webp: "image/webp"
 })
+
+const delimit = when(isArray, join(", "))
+
+const getDimensions = prop("dimensions")
+
+export const isDimensions = isArrayAnd(all(isNumber))
+
+export const isDimensionsList = isArrayAnd(all(isDimensions))
 
 const getFormat = (url) => {
   const match = url.match(/\.([\w]+)$/)
@@ -32,26 +63,47 @@ export const buildQuery = (options) => {
   return OPTIONS.reduce((acc, [key, query]) => {
     const value = options && options[key]
     return value ? `${acc}&${query}=${value}` : acc
-  }, "")
+  }, "").replace(/^&/, "?")
 }
 
-export const buildUrl = (src, options) => {
-  const base = checkSrc(src)
-  const query = buildQuery(options)
-  return `${base}${query.replace(/^&/, "?")}`
+const buildSrc = curry((src, options, dimensions) => {
+  const mergeOptions = mergeRight(options)
+  const optionsWidth = options && options.width
+  const optionsHeight = options && options.height
+  const width = propOr(optionsWidth, 0, dimensions)
+  const height = propOr(optionsHeight, 1, dimensions)
+  const query = buildQuery(mergeOptions({ width, height }))
+  const meta = width ? ` ${width}w` : ""
+  return `${src}${query}${meta}`
+})
+
+export const buildSrcset = (src, options) => {
+  const f = buildSrc(checkSrc(src), options)
+  const g = ifElse(isDimensionsList, map(f), f)
+  return delimit(g(getDimensions(options)))
 }
 
 export const buildSources = (src, options) => {
-  const base = checkSrc(src)
-  const formats = ["webp", getFormat(base)]
-  const query = buildQuery(options)
+  const formats = ["webp", getFormat(checkSrc(src))]
+  const mergeOptions = mergeRight(options)
   return formats.map((format) => ({
-    srcset: `${src}?fm=${format}${query}`,
+    srcset: buildSrcset(src, mergeOptions({ format })),
     type: typeFromFormat(format)
   }))
 }
 
+export const buildUrl = (src, options) => {
+  return concat(checkSrc(src), buildQuery(options))
+}
+
 export const props = {
+  // type Width = Number
+  // type Height = Number
+  // type Dimensions = [Width?, Height?]
+  dimensions: {
+    type: Array, // Dimensions | Dimensions[]
+    validate: either(isDimensions, isDimensionsList)
+  },
   width: {
     type: Number
   },
