@@ -6,6 +6,7 @@
         :key="source.type"
         :type="source.type"
         :data-srcset="source.srcset"
+        :data-aspectratio="aspectratio"
         :data-optimumx="optimumx"
         :data-sizes="sizes"
       />
@@ -14,8 +15,11 @@
       :alt="alt"
       :data-src="url"
       :data-srcset="srcset"
+      :data-aspectratio="aspectratio"
       :data-optimumx="optimumx"
       :data-sizes="sizes"
+      :class="objectFit"
+      :style="styles"
       class="lazyload"
     />
   </picture>
@@ -23,6 +27,7 @@
 
 <script>
 import { mergeRight, omit } from "ramda"
+import { oneOf } from "~/core/utils"
 import {
   buildSources,
   buildSrcset,
@@ -46,9 +51,19 @@ export default {
       type: String,
       default: "auto"
     },
+    aspectratio: {
+      type: Number
+    },
     optimumx: {
       type: [Number, String],
       default: "auto"
+    },
+    objectFit: {
+      type: String,
+      validate: oneOf(["contain", "cover"])
+    },
+    objectPosition: {
+      type: String
     },
     webp: {
       type: Boolean,
@@ -65,6 +80,9 @@ export default {
     srcset() {
       return buildSrcset(this.src, this.options)
     },
+    styles() {
+      return { objectPosition: this.objectPosition }
+    },
     url() {
       return buildUrl(this.src, this.options)
     }
@@ -74,9 +92,24 @@ export default {
 
 <style lang="scss">
 .image {
+  display: block;
+
   img[data-sizes="auto"] {
     display: block;
+  }
+
+  img.cover,
+  img.contain {
     width: 100%;
+    height: 100%;
+  }
+
+  img.cover {
+    @include object-fit(cover);
+  }
+
+  img.contain {
+    @include object-fit(contain);
   }
 
   .lazyload,

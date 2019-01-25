@@ -24,13 +24,13 @@ exports[`Image renders optional props 1`] = `
   <source
     data-optimumx="auto"
     data-sizes="auto"
-    data-srcset="/image.jpg?fl=progressive&f=faces&fm=webp&q=50&w=200 200w"
+    data-srcset="/image.jpg?fl=progressive&f=faces&fm=webp&h=200&q=50&w=200 200w 200h, /image.jpg?fl=progressive&f=faces&fm=webp&h=300&q=50&w=400 400w 300h"
     type="image/webp"
   />
   <source
     data-optimumx="auto"
     data-sizes="auto"
-    data-srcset="/image.jpg?fl=progressive&f=faces&fm=jpg&q=50&w=200 200w"
+    data-srcset="/image.jpg?fl=progressive&f=faces&fm=jpg&h=200&q=50&w=200 200w 200h, /image.jpg?fl=progressive&f=faces&fm=jpg&h=300&q=50&w=400 400w 300h"
     type="image/jpeg"
   />
    
@@ -39,8 +39,8 @@ exports[`Image renders optional props 1`] = `
     class="lazyload"
     data-optimumx="auto"
     data-sizes="auto"
-    data-src="/image.jpg?fl=progressive&f=faces&q=50&w=200"
-    data-srcset="/image.jpg?fl=progressive&f=faces&q=50&w=200 200w"
+    data-src="/image.jpg?fl=progressive&f=faces&h=200&q=50"
+    data-srcset="/image.jpg?fl=progressive&f=faces&h=200&q=50&w=200 200w 200h, /image.jpg?fl=progressive&f=faces&h=300&q=50&w=400 400w 300h"
   />
 </picture>
 `;

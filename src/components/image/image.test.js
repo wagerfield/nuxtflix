@@ -28,7 +28,8 @@ describe("Image", () => {
       propsData: {
         src: "/image.jpg",
         alt: "Foo",
-        width: 200,
+        dimensions: [[200], [400, 300]],
+        height: 200,
         focus: "faces",
         flag: "progressive",
         quality: 50
