@@ -51,7 +51,8 @@ export default {
       default: "auto"
     },
     webp: {
-      type: Boolean
+      type: Boolean,
+      default: true
     }
   }),
   computed: {

@@ -5,7 +5,6 @@
       :src="film.cover.file.url"
       :dimensions="dimensions"
       fit="fill"
-      webp
     />
   </component>
 </template>
