@@ -11,7 +11,12 @@
 </template>
 
 <script>
+import VImage from "~/components/image/image.vue"
+
 export default {
+  components: {
+    VImage
+  },
   props: {
     film: {
       type: Object,

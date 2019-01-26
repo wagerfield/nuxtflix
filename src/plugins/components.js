@@ -1,4 +1,4 @@
-import Vue from "vue"
-import Image from "~/components/image/image.vue"
+// import Vue from "vue"
+// import Image from "~/components/image/image.vue"
 
-Vue.component("v-image", Image)
+// Vue.component("v-image", Image)
