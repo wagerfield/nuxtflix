@@ -1,20 +1,34 @@
 <template>
-  <div class="components-page grid">
-    <h1 class="uppercase" data-postfix="in the dark.">Components</h1>
-    <div class="wrapper light">
-      <v-button text="Light Regular" />
-      <v-button text="Light Regular Fill" fill />
-      <v-button text="Light Elevate" elevate />
-      <v-button text="Light Elevate Fill" fill elevate />
+  <v-lazy ssr-only>
+    <div class="components-page grid">
+      <h1 class="uppercase" data-postfix="in the dark.">Components</h1>
+      <div class="wrapper light">
+        <v-button text="Light Regular" />
+        <v-button text="Light Regular Fill" fill />
+        <v-button text="Light Elevate" elevate />
+        <v-button text="Light Elevate Fill" fill elevate />
+      </div>
+      <div class="wrapper dark">
+        <v-button text="Dark Regular" dark />
+        <v-button text="Dark Regular Fill" dark fill />
+        <v-button text="Dark Elevate" dark elevate />
+        <v-button text="Dark Elevate Fill" dark fill elevate />
+      </div>
     </div>
-    <div class="wrapper dark">
-      <v-button text="Dark Regular" dark />
-      <v-button text="Dark Regular Fill" dark fill />
-      <v-button text="Dark Elevate" dark elevate />
-      <v-button text="Dark Elevate Fill" dark fill elevate />
-    </div>
-  </div>
+  </v-lazy>
 </template>
+
+<script>
+import { always } from "ramda"
+import VLazy from "vue-lazy-hydration"
+
+export default {
+  components: {
+    VLazy,
+    VButton: always(import("~/components/button/button.vue"))
+  }
+}
+</script>
 
 <style lang="scss" scoped>
 .components-page {
