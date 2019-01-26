@@ -6836,11 +6836,6 @@ lazy-cache@^1.0.3:
   resolved "https://registry.yarnpkg.com/lazy-cache/-/lazy-cache-1.0.4.tgz#a1d78fc3a50474cb80845d3b3b6e1da49a446e8e"
   integrity sha1-odePw6UEdMuAhF07O24dpJpEbo4=
 
-lazy-hydration@^0.2.0:
-  version "0.2.0"
-  resolved "https://registry.yarnpkg.com/lazy-hydration/-/lazy-hydration-0.2.0.tgz#a35060126309db812a2fb9c050dcb8cd11ce94e9"
-  integrity sha512-F56VdHnHjnXsliYzpv0kN2HAVCTXWMUWtD5x24j2Wzk4z4OlvExlAW22/saNnONmEEaLpUqTMCiVN1s8pHD2sw==
-
 lazysizes@^4.1.5:
   version "4.1.5"
   resolved "https://registry.yarnpkg.com/lazysizes/-/lazysizes-4.1.5.tgz#37c5a34aab03d11285f9ff29919b2e664941a32b"
@@ -11334,6 +11329,11 @@ vue-jest@^3.0.2:
     source-map "^0.5.6"
     tsconfig "^7.0.0"
     vue-template-es2015-compiler "^1.6.0"
+
+vue-lazy-hydration@^1.0.0-beta.2:
+  version "1.0.0-beta.2"
+  resolved "https://registry.yarnpkg.com/vue-lazy-hydration/-/vue-lazy-hydration-1.0.0-beta.2.tgz#f2255f0e22d105ce6030cd63a85b01b89d63f657"
+  integrity sha512-R+KfpZDF4K6q2RfwzSKgxB1kzkbTlGURnOQds7ArSCDIgQHIiryQWXYDlViuJw1yOTcVy5z0l7yIEz5O+s7NdQ==
 
 vue-loader@^15.4.2:
   version "15.6.1"
