@@ -1,15 +1,22 @@
 <template>
   <div class="layout grid" :class="{ offline }">
-    <v-header />
+    <v-lazy when-idle><v-header /></v-lazy>
     <main class="content"><nuxt /></main>
-    <v-footer />
+    <v-lazy when-visible><v-footer /></v-lazy>
   </div>
 </template>
 
 <script>
+import { always } from "ramda"
 import { mapState } from "vuex"
+import VLazy from "vue-lazy-hydration"
 
 export default {
+  components: {
+    VLazy,
+    VHeader: always(import("~/components/header/header.vue")),
+    VFooter: always(import("~/components/footer/footer.vue"))
+  },
   computed: mapState(["offline"])
 }
 </script>

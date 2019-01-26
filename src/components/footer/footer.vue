@@ -2,7 +2,7 @@
   <footer class="footer grid mono">
     <div class="footer-logo-wrapper">
       <nuxt-link class="footer-logo-link" to="/">
-        <v-logo theme="light-mono" />
+        <v-lazy ssr-only><v-logo theme="light-mono"/></v-lazy>
         <span class="footer-logo-text">Nuxtflix</span>
       </nuxt-link>
     </div>
@@ -38,10 +38,16 @@
 </template>
 
 <script>
+import { always } from "ramda"
+import VLazy from "vue-lazy-hydration"
 import { WAGERFIELD } from "~/core/links"
 import links from "./links"
 
 export default {
+  components: {
+    VLazy,
+    VLogo: always(import("~/components/logo/logo.vue"))
+  },
   static: {
     WAGERFIELD
   },

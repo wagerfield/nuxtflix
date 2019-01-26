@@ -1,7 +1,7 @@
 <template>
   <header class="header mono">
     <nuxt-link class="header-logo-link" to="/">
-      <v-logo />
+      <v-lazy ssr-only><v-logo /></v-lazy>
       <span class="header-logo-text">Nuxtflix</span>
     </nuxt-link>
     <nav class="header-nav">
@@ -17,7 +17,14 @@
 </template>
 
 <script>
+import { always } from "ramda"
+import VLazy from "vue-lazy-hydration"
+
 export default {
+  components: {
+    VLazy,
+    VLogo: always(import("~/components/logo/logo.vue"))
+  },
   props: {
     links: {
       type: Array,
