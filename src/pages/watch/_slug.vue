@@ -1,6 +1,6 @@
 <template>
   <div class="watch-page grid">
-    <v-lazy when-idle><v-video :embed="film.trailer"/></v-lazy>
+    <v-lazy ssr-only><v-video :embed="film.trailer"/></v-lazy>
   </div>
 </template>
 
