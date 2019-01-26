@@ -1,22 +1,33 @@
 <template>
-  <div class="films-page grid">
-    <header class="films-header"><h1 class="uppercase title">Films</h1></header>
-    <ul class="films-list">
-      <li v-for="film in films" :key="film.id">
-        <nuxt-link class="films-link" :to="getPath(film)">
-          <v-film-cover :film="film" :widths="[240, 400]" />
-        </nuxt-link>
-      </li>
-    </ul>
-  </div>
+  <v-lazy ssr-only>
+    <div class="films-page grid">
+      <header class="films-header">
+        <h1 class="uppercase title">Films</h1>
+      </header>
+      <ul class="films-list">
+        <li v-for="film in films" :key="film.id">
+          <nuxt-link class="films-link" :to="getPath(film)">
+            <v-film-cover :film="film" :widths="[240, 400]" />
+          </nuxt-link>
+        </li>
+      </ul>
+    </div>
+  </v-lazy>
 </template>
 
 <script>
+import { always } from "ramda"
+import VLazy from "vue-lazy-hydration"
+
 export default {
   async asyncData({ app, payload }) {
     const select = "sys.id,fields.title,fields.cover,fields.slug"
     const films = payload || (await app.$cms.getFilms({ select }, false))
     return { films }
+  },
+  components: {
+    VLazy,
+    VFilmCover: always(import("~/components/film/film-cover.vue"))
   },
   methods: {
     getPath(film) {
