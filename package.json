@@ -69,6 +69,7 @@
     "nuxt": "^2.3.4",
     "ramda": "^0.26.1",
     "vue": "^2.5.22",
+    "vue-lazy-hydration": "^1.0.0-beta.2",
     "webfontloader": "^1.6.28"
   },
   "devDependencies": {

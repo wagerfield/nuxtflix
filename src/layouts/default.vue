@@ -1,8 +1,8 @@
 <template>
   <div class="layout grid" :class="{ offline }">
-    <v-header />
+    <v-hydrate when-idle><v-header /></v-hydrate>
     <main class="content"><nuxt /></main>
-    <v-footer />
+    <v-hydrate when-visible><v-footer /></v-hydrate>
   </div>
 </template>
 
