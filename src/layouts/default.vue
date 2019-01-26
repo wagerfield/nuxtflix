@@ -1,7 +1,9 @@
 <template>
   <div class="layout grid" :class="{ offline }">
     <v-lazy when-idle><v-header /></v-lazy>
-    <main class="content"><nuxt /></main>
+    <v-lazy when-idle>
+      <main class="content"><nuxt /></main>
+    </v-lazy>
     <v-lazy when-visible><v-footer /></v-lazy>
   </div>
 </template>
