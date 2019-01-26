@@ -1,12 +1,21 @@
 <template>
-  <div class="watch-page grid"><v-video :embed="film.trailer" /></div>
+  <div class="watch-page grid">
+    <v-lazy when-idle><v-video :embed="film.trailer"/></v-lazy>
+  </div>
 </template>
 
 <script>
+import { always } from "ramda"
+import VLazy from "vue-lazy-hydration"
+
 export default {
   async asyncData({ app, params, payload }) {
     const film = payload || (await app.$cms.getFilmBySlug(params.slug))
     return { film }
+  },
+  components: {
+    VLazy,
+    VVideo: always(import("~/components/video/video.vue"))
   }
 }
 </script>
