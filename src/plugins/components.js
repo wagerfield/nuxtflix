@@ -1,4 +1,5 @@
 import Vue from "vue"
+import Hydrate from "vue-lazy-hydration"
 import Button from "~/components/button/button.vue"
 import Image from "~/components/image/image.vue"
 import FilmCover from "~/components/film/film-cover.vue"
@@ -13,6 +14,7 @@ Vue.component("v-image", Image)
 Vue.component("v-film-cover", FilmCover)
 Vue.component("v-footer", Footer)
 Vue.component("v-header", Header)
+Vue.component("v-hydrate", Hydrate)
 Vue.component("v-logo", Logo)
 Vue.component("v-placeholder", Placeholder)
 Vue.component("v-video", Video)
