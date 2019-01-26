@@ -1,7 +1,7 @@
 <template>
   <div class="film-page grid">
     <h1 class="title" v-text="film.title" />
-    <v-image :src="film.cover.file.url" :alt="film.title" :width="600" />
+    <h2 class="rating" v-text="film.rating" />
   </div>
 </template>
 
@@ -19,17 +19,7 @@ export default {
   padding-top: $header-height;
 }
 
-.title,
-.image {
+.title {
   grid-column: content;
-}
-
-@include desktop {
-  .title {
-    grid-column: half-1;
-  }
-  .image {
-    grid-column: half-2;
-  }
 }
 </style>
