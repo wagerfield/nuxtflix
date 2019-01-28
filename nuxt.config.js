@@ -74,6 +74,9 @@ export default {
     src: "plugins/lazysizes",
     ssr: false
   }, {
+    src: "plugins/analytics",
+    ssr: false
+  }, {
     src: "plugins/components",
     ssr: true
   }, {
@@ -84,7 +87,7 @@ export default {
     ssr: true
   }, {
     src: "plugins/install",
-    ssr: true
+    ssr: false
   }, {
     src: "plugins/offline",
     ssr: false
