@@ -5,15 +5,15 @@
         <h1 class="uppercase title">Films</h1>
       </header>
     </v-hydrate>
-    <v-hydrate on-interaction>
-      <ul class="films-list">
-        <li v-for="film in films" :key="film.id" class="film-item">
+    <ul class="films-list">
+      <v-hydrate v-for="film in films" :key="film.id" on-interaction>
+        <li class="film-item">
           <nuxt-link class="films-link" :to="getPath(film)">
             <v-film-cover :film="film" :widths="[240, 400]" />
           </nuxt-link>
         </li>
-      </ul>
-    </v-hydrate>
+      </v-hydrate>
+    </ul>
   </div>
 </template>
 
