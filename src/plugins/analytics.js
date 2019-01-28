@@ -8,14 +8,11 @@ export default ({ app, env, isDev }) => {
   // https://www.npmjs.com/package/vue-analytics
   Vue.use(VueAnalytics, {
     id: env.GOOGLE_ANALYTICS_ID,
+    set: [{ field: BRANCH, value: env.BRANCH }],
     router: app.router,
-    autoTracking: {
-      screenview: true
-    },
     debug: {
       // enabled: isDev,
       sendHitTask: !isDev
-    },
-    set: [{ field: BRANCH, value: env.BRANCH }]
+    }
   })
 }
