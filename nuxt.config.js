@@ -44,6 +44,16 @@ export default {
     htmlAttrs: {
       lang: LANG
     },
+    link: [{
+      rel: "preconnect",
+      href: "https://www.google-analytics.com"
+    }, {
+      rel: "preconnect",
+      href: "https://fonts.googleapis.com"
+    }, {
+      rel: "preconnect",
+      href: "https://fonts.gstatic.com"
+    }],
     meta: [{
       hid: "keywords",
       name: "keywords",
