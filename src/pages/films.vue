@@ -5,7 +5,7 @@
         <h1 class="uppercase title">Films</h1>
       </header>
     </v-hydrate>
-    <v-hydrate when-idle>
+    <v-hydrate on-interaction>
       <ul class="films-list">
         <li v-for="film in films" :key="film.id" class="film-item">
           <nuxt-link class="films-link" :to="getPath(film)">
