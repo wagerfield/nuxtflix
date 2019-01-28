@@ -13,10 +13,10 @@ export default ({ app, env, isDev }) => {
       exception: true,
       screenview: true
     },
-    set: [{ field: BRANCH, value: env.BRANCH }],
     debug: {
       // enabled: isDev,
       sendHitTask: !isDev
-    }
+    },
+    set: [{ field: BRANCH, value: env.BRANCH }]
   })
 }
