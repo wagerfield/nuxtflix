@@ -10,13 +10,12 @@ export default ({ app, env, isDev }) => {
     id: env.GOOGLE_ANALYTICS_ID,
     router: app.router,
     autoTracking: {
-      exception: true,
       screenview: true
     },
-    // debug: {
-    //   enabled: isDev,
-    //   sendHitTask: !isDev
-    // },
+    debug: {
+      // enabled: isDev,
+      sendHitTask: !isDev
+    },
     set: [{ field: BRANCH, value: env.BRANCH }]
   })
 }
