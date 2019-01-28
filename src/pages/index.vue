@@ -16,6 +16,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.placeholder {
+  background: $yellow;
+}
 .callout {
   margin-top: 4rem;
 }
