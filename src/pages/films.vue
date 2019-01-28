@@ -6,7 +6,7 @@
       </header>
     </v-hydrate>
     <ul class="films-list">
-      <v-hydrate v-for="film in films" :key="film.id" when-visible>
+      <v-hydrate v-for="film in films" :key="film.id" on-interaction>
         <li class="film-item">
           <nuxt-link class="films-link" :to="getPath(film)">
             <v-film-cover :film="film" :widths="[240, 400]" />
