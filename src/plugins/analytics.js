@@ -9,12 +9,12 @@ export default ({ app, env, isDev }) => {
   Vue.use(VueAnalytics, {
     id: env.GOOGLE_ANALYTICS_ID,
     router: app.router,
-    // autoTracking: {
-    //   exception: true,
-    //   screenview: true
-    // },
+    autoTracking: {
+      exception: true,
+      screenview: true
+    },
     // debug: {
-    //   // enabled: isDev,
+    //   enabled: isDev,
     //   sendHitTask: !isDev
     // },
     set: [{ field: BRANCH, value: env.BRANCH }]
