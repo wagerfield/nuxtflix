@@ -18,7 +18,7 @@ export default {
 
 <style lang="scss" scoped>
 .placeholder {
-  background: $yellow;
+  background: $green;
 }
 .callout {
   margin-top: 4rem;
