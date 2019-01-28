@@ -7,7 +7,8 @@ const filmRoute = (path) => (film) => ({
   payload: film
 })
 
-const mapFilms = ap([filmRoute("/film"), filmRoute("/watch")])
+// const mapFilms = ap([filmRoute("/film"), filmRoute("/watch")])
+const mapFilms = ap([filmRoute("/watch")])
 
 export default async () => {
   const cms = create(env)
