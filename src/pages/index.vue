@@ -1,16 +1,17 @@
 <template>
   <v-placeholder>
-    <div v-if="install" class="callout">
-      <v-button text="Install" elevate @click="$install" />
+    <div v-if="canInstallWebApp" class="callout">
+      <v-button text="Install" elevate @click="installWebApp" />
     </div>
   </v-placeholder>
 </template>
 
 <script>
-import { mapState } from "vuex"
+import { mapGetters, mapActions } from "vuex"
 
 export default {
-  computed: mapState(["install"])
+  computed: mapGetters(["canInstallWebApp"]),
+  methods: mapActions(["installWebApp"])
 }
 </script>
 
