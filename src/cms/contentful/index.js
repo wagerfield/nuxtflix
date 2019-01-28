@@ -1,6 +1,7 @@
 import { createClient } from "contentful"
-import { mapEntry, mapEntries, queryType } from "./entry"
+import { isFunction } from "../../core/utils"
 import { validateFilms, validateFilm } from "../types/film"
+import { mapEntry, mapEntries, queryType } from "./entry"
 
 export default (env) => {
   // Client
@@ -13,17 +14,17 @@ export default (env) => {
 
   // API
   return {
-    async getFilms(options, validate = true) {
+    async getFilms(options, validate = validateFilms) {
       const query = queryType("film", options)
       const entries = await client.getEntries(query)
       const films = mapEntries(entries.items)
-      return validate ? validateFilms(films) : films
+      return isFunction(validate) ? validate(films) : films
     },
-    async getFilmBySlug(slug, validate = true) {
+    async getFilmBySlug(slug, validate = validateFilm) {
       const query = queryType("film", { "fields.slug": slug })
       const entries = await client.getEntries(query)
       const film = mapEntry(entries.items[0])
-      return validate ? validateFilm(film) : film
+      return isFunction(validate) ? validate(film) : film
     }
   }
 }
