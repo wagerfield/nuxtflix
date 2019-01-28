@@ -1,24 +1,12 @@
-export default ({ store }, inject) => {
-  let installer = null
+import { event as sendEvent } from "vue-analytics"
 
-  inject("install", () => {
-    if (installer) installer.prompt()
+export default ({ store }) => {
+  window.addEventListener("beforeinstallprompt", (event) => {
+    event.preventDefault()
+    store.commit("setInstaller", event)
   })
-
-  if (process.client) {
-    // Before install prompt handler
-    window.addEventListener("beforeinstallprompt", (event) => {
-      event.preventDefault()
-      installer = event
-      // installer.userChoice.then(({ outcome }) => {
-      //   console.log(`User ${outcome} prompt`)
-      // })
-      store.commit("setInstall", true)
-    })
-
-    // App installed handler
-    window.addEventListener("appinstalled", (event) => {
-      store.commit("setInstall", false)
-    })
-  }
+  window.addEventListener("appinstalled", (event) => {
+    store.commit("setInstaller", null)
+    sendEvent("WebApp", "installed")
+  })
 }

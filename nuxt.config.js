@@ -44,6 +44,16 @@ export default {
     htmlAttrs: {
       lang: LANG
     },
+    link: [{
+      rel: "preconnect",
+      href: "https://www.google-analytics.com"
+    }, {
+      rel: "preconnect",
+      href: "https://fonts.googleapis.com"
+    }, {
+      rel: "preconnect",
+      href: "https://fonts.gstatic.com"
+    }],
     meta: [{
       hid: "keywords",
       name: "keywords",
@@ -74,6 +84,9 @@ export default {
     src: "plugins/lazysizes",
     ssr: false
   }, {
+    src: "plugins/analytics",
+    ssr: false
+  }, {
     src: "plugins/components",
     ssr: true
   }, {
@@ -84,7 +97,7 @@ export default {
     ssr: true
   }, {
     src: "plugins/install",
-    ssr: true
+    ssr: false
   }, {
     src: "plugins/offline",
     ssr: false
