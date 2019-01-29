@@ -45,7 +45,6 @@ export default {
         installer.prompt()
         sendEvent("WebApp", "install", "User prompted to install")
         const { outcome } = await installer.userChoice
-        console.log(outcome) // eslint-disable-line
         sendEvent("WebApp", "install", `User ${outcome} prompt`)
       }
     },
