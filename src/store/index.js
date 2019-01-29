@@ -44,8 +44,9 @@ export default {
       if (installer) {
         installer.prompt()
         sendEvent("WebApp", "install", "User prompted to install")
-        const outcome = await installer.userChoice
-        sendEvent("WebApp", "install", `User ${outcome} prompt`)
+        const choice = await installer.userChoice
+        console.log(choice) // eslint-disable-line
+        sendEvent("WebApp", "install", `User ${choice} prompt`)
       }
     },
     async getFilms({ state, commit }) {
