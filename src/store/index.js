@@ -4,16 +4,12 @@ import { prop, propEq } from "ramda"
 export default {
   state: () => ({
     installer: null,
-    offline: false,
     outline: false,
     films: null
   }),
   mutations: {
     setInstaller(state, installer) {
       state.installer = installer
-    },
-    setOffline(state, offline) {
-      state.offline = offline
     },
     setOutline(state, outline) {
       state.outline = outline

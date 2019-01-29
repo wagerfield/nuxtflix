@@ -1,5 +1,5 @@
 <template>
-  <div class="layout grid" :class="{ offline }">
+  <div class="layout grid" :class="classes">
     <v-hydrate when-idle><v-header /></v-hydrate>
     <main class="content"><nuxt /></main>
     <v-hydrate when-visible><v-footer /></v-hydrate>
@@ -7,10 +7,14 @@
 </template>
 
 <script>
-import { mapState } from "vuex"
-
 export default {
-  computed: mapState(["offline"])
+  computed: {
+    classes() {
+      return {
+        offline: this.$nuxt.isOffline
+      }
+    }
+  }
 }
 </script>
 
