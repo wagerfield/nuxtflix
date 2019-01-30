@@ -1,16 +1,18 @@
-import { either, flip, includes, is, isNil, prop } from "ramda"
+import { curry, either, equals, flip, includes, isNil, prop } from "ramda"
 
-export const isArray = Array.isArray || is(Array)
+export const isType = curry((type, value) => equals(type, typeof value))
 
-export const isBoolean = is(Boolean)
+export const isArray = Array.isArray
 
-export const isFunction = is(Function)
+export const isBoolean = isType("boolean")
 
-export const isNumber = is(Number)
+export const isFunction = isType("function")
 
-export const isObject = is(Object)
+export const isNumber = isType("number")
 
-export const isString = is(String)
+export const isObject = isType("object")
+
+export const isString = isType("string")
 
 export const optional = either(isNil)
 

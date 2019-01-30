@@ -18,10 +18,20 @@
 </template>
 
 <script>
+const QUERY = {
+  select: [
+    "sys.id",
+    "sys.createdAt",
+    "sys.updatedAt",
+    "fields.title",
+    "fields.cover",
+    "fields.slug"
+  ].join(",")
+}
+
 export default {
   async asyncData({ app, payload }) {
-    const select = "sys.id,fields.title,fields.cover,fields.slug"
-    const films = payload || (await app.$cms.getFilms({ select }, false))
+    const films = payload || (await app.$cms.getFilms(QUERY, false))
     return { films }
   },
   methods: {

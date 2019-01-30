@@ -77,34 +77,16 @@ export default {
     "@nuxtjs/pwa"
   ],
   // Plugins https://nuxtjs.org/guide/plugins
-  plugins: [{
-    src: "plugins/webfonts",
-    ssr: false
-  }, {
-    src: "plugins/lazysizes",
-    ssr: false
-  }, {
-    src: "plugins/analytics",
-    ssr: false
-  }, {
-    src: "plugins/components",
-    ssr: true
-  }, {
-    src: "plugins/cms",
-    ssr: true
-  }, {
-    src: "plugins/static",
-    ssr: true
-  }, {
-    src: "plugins/install",
-    ssr: false
-  }, {
-    src: "plugins/offline",
-    ssr: false
-  }, {
-    src: "plugins/outline",
-    ssr: false
-  }],
+  plugins: [
+    "plugins/webfonts.client",
+    "plugins/lazysizes.client",
+    "plugins/analytics.client",
+    "plugins/components",
+    "plugins/cms",
+    "plugins/static",
+    "plugins/install.client",
+    "plugins/outline.client"
+  ],
   // Styles https://nuxtjs.org/api/configuration-css
   css: [
     "normalize.css",
@@ -125,6 +107,7 @@ export default {
   },
   // Build
   srcDir: "src",
+  hardSource: true,
   generate,
   sitemap,
   hooks,

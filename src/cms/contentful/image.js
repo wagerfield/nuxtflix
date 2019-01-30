@@ -17,7 +17,7 @@ import {
   unless,
   when
 } from "ramda"
-import { isNumber, isString, oneOf, propFrom, isArray } from "~/core/utils"
+import { isArray, isNumber, isString, oneOf, propFrom } from "~/core/utils"
 
 export const DIMENSIONS = ["w", "h"]
 
