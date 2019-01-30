@@ -19,8 +19,6 @@ import {
 } from "ramda"
 import { isArray, isNumber, isString, oneOf, propFrom } from "~/core/utils"
 
-export const DIMENSIONS = ["w", "h"]
-
 // Keys sorted alphabetically
 export const OPTIONS = [
   ["background", "bg"],
