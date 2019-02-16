@@ -36,8 +36,8 @@ export default {
   },
   // Workbox https://pwa.nuxtjs.org/modules/workbox
   workbox: {
-    cachingExtensions: "sw/caching.js",
-    routingExtensions: "sw/routing.js"
+    offlineAnalytics: true,
+    cachingExtensions: ["sw/caching.js"]
   },
   // Head https://nuxtjs.org/api/configuration-head
   head: {

@@ -8,10 +8,6 @@ const expire1y = new workbox.expiration.Plugin({
   maxAgeSeconds: 60 * 60 * 24 * 365 // 1 year
 })
 
-// Analytics
-
-workbox.googleAnalytics.initialize()
-
 // Styles
 
 workbox.routing.registerRoute(
