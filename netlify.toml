@@ -1,0 +1,9 @@
+[build]
+  command = "yarn generate"
+  publish = "dist"
+
+[[redirects]]
+  from = "https://nuxtflix.netlify.com/*"
+  to = "https://nuxtflix.com/:splat"
+  status = 301
+  force = true
