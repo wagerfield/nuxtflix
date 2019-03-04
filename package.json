@@ -106,7 +106,7 @@
     "rimraf": "2.6.3",
     "sass-loader": "7.1.0",
     "serve": "10.1.2",
-    "vue-jest": "3.0.3",
+    "vue-jest": "3.0.4",
     "vue-template-compiler": "2.6.6",
     "webpack": "4.29.4"
   }
