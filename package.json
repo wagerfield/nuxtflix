@@ -66,7 +66,7 @@
     "contentful": "7.3.0",
     "lazysizes": "4.1.6",
     "normalize.css": "8.0.1",
-    "nuxt": "2.4.3",
+    "nuxt": "2.6.3",
     "ramda": "0.26.1",
     "vue": "2.6.6",
     "vue-analytics": "5.16.2",
