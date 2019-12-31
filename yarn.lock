@@ -11344,10 +11344,10 @@ vue-jest@3.0.3:
     tsconfig "^7.0.0"
     vue-template-es2015-compiler "^1.6.0"
 
-vue-lazy-hydration@1.0.0-beta.4:
-  version "1.0.0-beta.4"
-  resolved "https://registry.yarnpkg.com/vue-lazy-hydration/-/vue-lazy-hydration-1.0.0-beta.4.tgz#03179873136902a45b15db3eb7e27ba8729f02fd"
-  integrity sha512-zD1R+Mxq1umy8R1TZdNVwCDqTEDXiZ331giwQk5hSab/7HpEBuoBTtkpGaioGlku8UhZqirJNdVvnmDwX0yjKQ==
+vue-lazy-hydration@1.0.0-beta.12:
+  version "1.0.0-beta.12"
+  resolved "https://registry.yarnpkg.com/vue-lazy-hydration/-/vue-lazy-hydration-1.0.0-beta.12.tgz#d578dc86059eb0a147e6e553585dd22c41dfbae2"
+  integrity sha512-0innXtjaqNodh0aw1/3dgGdEfL76eqDzo3CETSKolyjm3Z++hqBS7GQkrAAfp4JYBE12mb5yP2YnJxK6tJSGIA==
 
 vue-loader@^15.6.2:
   version "15.6.2"
