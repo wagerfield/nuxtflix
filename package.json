@@ -69,7 +69,7 @@
     "nuxt": "2.4.3",
     "ramda": "0.26.1",
     "vue": "2.6.6",
-    "vue-analytics": "5.16.2",
+    "vue-analytics": "5.22.1",
     "vue-lazy-hydration": "1.0.0-beta.4",
     "webfontloader": "1.6.28"
   },
